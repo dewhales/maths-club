@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>
+			Al-Aleem Maths Club
+		</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="container">
+			<header id="header">
+				<img class="img head" src="img/banner.jpg">
+			</header>
+			<div id="nav-wrap">
+				<div id="nav-container">
+					<table border="0" class="nav table">
+						<tr class="row">
+							<td class="table cells left">
+									<h4 id="mathematics">
+										<span class="maths matics">
+											mathematics
+										</span>
+										<span class="maths club">
+											club
+										</span>
+										<span class="maths project">
+											project
+										</span>
+										<marquee>
+											<small class="school">
+												...Al-Aleem Academy...(Upon God Strength we Stand)
+											</small>
+										</marquee>
+									</h4>
+							</td>
+							<td class="table cells right">
+								<a class="links" href="#">
+									Home
+								</a>
+							</td>
+							<td class="table cells right">
+								<a class="links" href="#">
+									About
+								</a>
+							</td>
+							<td class="table cells right">
+								<a class="links" href="#">
+									Contact
+								</a>
+							</td>
+							<td class="table cells right">
+								<a class="links" href="#">
+									Credits
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="content-wrap">
+				<div class="calc-navigation-wrap">
+				<!-- navigation tabs for the varieties of calculators -->
+					<form id="calc-navigation">
+						<fieldset class="fieldset nav-buttons">
+							<legend class="legend">
+								Area of Plane Shapes
+							</legend>
+							<a class="calc links" href="#basic">
+								Calculator
+							</a>
+							<a class="calc links" href="#circle">
+								Circle
+							</a>
+							<a class="calc links" href="#triangle">
+								Triangle
+							</a>
+							<a class="calc links" href="#rectangle">
+								Rectangle
+							</a>
+							<a class="calc links" href="#rectangle">
+								Square
+							</a>
+							<a class="calc links" href="#parallelogram">
+								Parallelogram
+							</a>
+							<a class="calc links" href="#cylinder">
+								Cylinder
+							</a>
+							<a class="calc links" href="#trapezium">
+								Trapezium
+							</a>
+						</fieldset>
+					</form>
+				</div>
+				<div id="basic-calc-wrap">
+					<!-- Basic calculator -->
+					<form id="basic-calc">
+						<fieldset class="fieldset calculator fcleft">
+							<legend id="basic" class="legend">
+								Calculator
+							</legend>
+							<div>
+								<label class="label" for="number1">
+									First Number:
+								</label><br>
+								<input class="input number" type="number" name="number1" placeholder="enter first number">
+							</div>
+							<div>
+								<label class="label" for="operator">
+									Operator:
+								</label>
+								<br>
+								<input class="input number" type="text" name="operator" placeholder="enter operator">
+							</div>
+							<div>
+								<label class="label" for="number2">
+									Second Number:
+								</label>
+								<br>
+								<input class="input number" type="number" name="number2" placeholder="enter second number">
+							</div>
+							<div>
+								<label class="label" for="result">
+									Result:
+								</label>
+								<br>
+								<input class="input number" type="number" name="result" placeholder="result">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-bas" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Circle-Calc-wrap">
+					<!-- Calculator for Circles -->
+					<form id="circle-calc">
+						<fieldset class="fieldset circle fcright">
+							<legend id="circle" class="legend">
+								Circle
+							</legend>
+							<div>
+								<label class="label" for="PI">
+									PI:
+								</label><br>
+								<input class="input number" type="number" name="PI" value="3.142857142857143" readonly>
+							</div>
+							<div>
+								<label class="label" for="radius">
+									Radius-( r ):
+								</label>
+								<br>
+								<input class="input number" type="text" name="radius" placeholder="radius">
+							</div>
+							<div>
+								<label class="label" for="cir-area">
+									Area-( A ) =
+									<small>
+										( PI x r<sup>2</sup> )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="cir-area	" placeholder="area">
+							</div>
+							<div>
+								<label class="label" for="circumference">
+									Circumference/Perimeter-( C/P ) =
+									<small>
+										( 2 x PI x r )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="circumference" placeholder="circumference">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-cir" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Triangle-Calc-wrap">
+					<!-- Calculator for Triangles -->
+					<form id="triangle-calc">
+						<fieldset class="fieldset triangle fcleft">
+							<legend id="triangle" class="legend">
+								Triangle
+							</legend>
+							<div>
+								<label class="label" for="tri-base">
+									Base-( b ):
+								</label><br>
+								<input class="input number" type="number" name="tri-base" placeholder="base">
+							</div>
+							<div>
+								<label class="label" for="tri-height">
+									Height-( h ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="tri-height" placeholder="height">
+							</div>
+							<div>
+								<label class="label" for="tri-area">
+									Area-( A ) =
+									<small>
+										( <small>1/2</small> ( b x h ))
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="tri-area" placeholder="area">
+							</div>
+							<div>
+								<label class="label" for="tri-per">
+									Perimeter-( P ) =
+									<small>
+										( base + 2( slant heights ))
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="tri-per" placeholder="if triangle is isosceles only">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-tri" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Rectangle-Calc-wrap">
+					<!-- Calculator for Rectangles -->
+					<form id="rectangle-calc">
+						<fieldset class="fieldset rectangle fcright">
+							<legend id="rectangle" class="legend">
+								Rectangle/Square
+							</legend>
+							<div>
+								<label class="label" for="rec-length">
+									Length-( l ):
+								</label><br>
+								<input class="input number" type="number" name="rec-length" placeholder="length">
+							</div>
+							<div>
+								<label class="label" for="Rec-breadth">
+									Breadth-( b ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="rec-breadth" placeholder="breadth">
+							</div>
+							<div>
+								<label class="label" for="rec-area">
+									Area-( A ) =
+									<small>
+										( l x b )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="rec-area" placeholder="area">
+							</div>
+							<div>
+								<label class="label" for="rec-per">
+									Perimeter-( P ) =
+									<small>
+										( 2( l ) + 2( b ) )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="rec-per" placeholder="perimeter">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-rec" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Parallelogram-Calc-wrap">
+					<!-- Calculator for Parallelograms -->
+					<form id="parallelogram-calc">
+						<fieldset class="fieldset parallelogram fcleft">
+							<legend id="parallelogram" class="legend">
+								Parallelogram
+							</legend>
+							<div>
+								<label class="label" for="par-base">
+									Base-( b ):
+								</label><br>
+								<input class="input number" type="number" name="par-base" placeholder="base">
+							</div>
+							<div>
+								<label class="label" for="par-height">
+									Height-( h ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="par-height" placeholder="height">
+							</div>
+							<div>
+								<label class="label" for="par-area">
+									Area-( A ) =
+									<small>
+										( b x h )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="par-area" placeholder="area">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-par" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Cylinder-Calc-wrap">
+					<!-- Calculator for Cylinders -->
+					<form id="cylinder-calc">
+						<fieldset class="fieldset cylinder fcright">
+							<legend id="cylinder" class="legend">
+								Cylinder
+							</legend>
+							<div>
+								<label class="label" for="cyl-PI">
+									PI:
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-PI" value="3.142857142857143" readonly>
+							</div>
+							<div>
+								<label class="label" for="cyl-radius">
+									Radius-( r ):
+								</label><br>
+								<input class="input number" type="number" name="cyl-radius" placeholder="radius">
+							</div>
+							<div>
+								<label class="label" for="cyl-height">
+									Height-( h ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-height" placeholder="height">
+							</div>
+							<div>
+								<label class="label" for="cyl-cba">
+									Circular Base Area-( CBA ) =
+									<small>
+										( PI x r<sup>2</sup> )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-cba" placeholder="circular base area">
+							</div>
+							<div>
+								<label class="label" for="cyl-csa">
+									Curved Surface Area-( CSA ) =
+									<small>
+										( 2 x PI x r x h )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-csa" placeholder="curved surface area">
+							</div>
+							<div>
+								<label class="label" for="cyl-tsa">
+									Total Surface Area-( TSA ) =
+									<small>
+										( 2 x PI x r( r + h ))
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-tsa" placeholder="total surface area">
+							</div>
+							<div>
+								<label class="label" for="cyl-vol">
+									Volume-( V ) =
+									<small>
+										( PI x r<sup>2</sup> x h )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="cyl-vol" placeholder="volume">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-cyl" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div id="Trapezium-Calc-wrap">
+					<!-- Calculator for Trapeziums -->
+					<form id="trapezium-calc">
+						<fieldset class="fieldset trapezium fcleft">
+							<legend id="trapezium" class="legend">
+								Trapezium
+							</legend>
+							<div>
+								<label class="label" for="trap-a">
+									Top-( a ):
+								</label><br>
+								<input class="input number" type="number" name="trap-a" placeholder="a">
+							</div>
+							<div>
+								<label class="label" for="trap-b">
+									Bottom-( b ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="trap-b" placeholder="b">
+							</div>
+							<div>
+								<label class="label" for="trap-height">
+									Height-( h ):
+								</label>
+								<br>
+								<input class="input number" type="number" name="trap-height" placeholder="height">
+							</div>
+							<div>
+								<label class="label" for="trap-area">
+									Area-( A ) =
+									<small>
+										(<small> 1/2 </small>( a + b ) h )
+									</small>
+								</label>
+								<br>
+								<input class="input number" type="number" name="trap-area" placeholder="area">
+							</div>
+							<div>
+								<input class="input submit" type="submit" name="submit-trap" value="answer">
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div id="footer-wrap">
+				<!-- footer note -->
+				<footer id="footer">
+					<p>
+						&copy Copyright.
+					</p>
+					<p>
+						Al-Aleem College mathematics club is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
+						We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
+						We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
+					</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
