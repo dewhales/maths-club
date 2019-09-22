@@ -129,8 +129,46 @@ body {
 	width: 45%;
 	float: right;
 }
-#footer-wrap {
+
+#contact-table {
+	width: 100%;
+	border-spacing: 10px;
+	border-collapse: collapse;
+	padding: 20px;
+	font-size: 2rem;
+	letter-spacing: 4px;
+	color: lightgray;
+	text-shadow: 1px 0 0 darkblue
+}
+#About-head {
+	font-size: 3rem;
+	letter-spacing: -3px;
+	color: white;
+	text-shadow: 0 0 40px black;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+.about-img {
+	float: left;
+	width: 100%;
+}
+.article {
+	width: 90%;
+	font-size: 2rem;
+	font-family: helvetical;
+	padding: 10px;
+}
+.article-head {
+	color: lightblue;
+}
+#about-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-familyhelvetica;
+	margin: 20px;
 	clear: both;
+}
+#footer-wrap {
 	text-align: center;
 	background-color: black;
 	color: #fff;
