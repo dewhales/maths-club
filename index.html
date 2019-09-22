@@ -61,8 +61,8 @@
 				</div>
 			</div>
 			<div id="content-wrap">
-				<div class="calc-navigation-wrap">
 				<!-- navigation tabs for the varieties of calculators -->
+				<div class="calc-navigation-wrap">
 					<form id="calc-navigation">
 						<fieldset class="fieldset nav-buttons">
 							<legend class="legend">
@@ -97,7 +97,6 @@
 				</div>
 				<div id="basic-calc-wrap">
 					<!-- Basic calculator -->
-					<form id="basic-calc">
 						<fieldset class="fieldset calculator fcleft">
 							<legend id="basic" class="legend">
 								Calculator
@@ -106,34 +105,37 @@
 								<label class="label" for="number1">
 									First Number:
 								</label><br>
-								<input class="input number" type="number" name="number1" placeholder="enter first number">
+								<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
 							</div>
 							<div>
 								<label class="label" for="operator">
-									Operator:
+									Operators:
+									<small>
+										" + "," - "," * "," / "," % ","power","square root","cube root"
+									</small>
 								</label>
 								<br>
-								<input class="input number" type="text" name="operator" placeholder="enter operator">
+								<input id="sign" class="input number" type="text" name="operator" placeholder="enter operator">
 							</div>
 							<div>
 								<label class="label" for="number2">
 									Second Number:
 								</label>
 								<br>
-								<input class="input number" type="number" name="number2" placeholder="enter second number">
+								<input id="num2" class="input number" type="number" name="number2" placeholder="enter second number">
 							</div>
 							<div>
 								<label class="label" for="result">
 									Result:
 								</label>
 								<br>
-								<input class="input number" type="number" name="result" placeholder="result">
+								<input id="result-bas" class="input number" type="number" name="result" placeholder="result">
 							</div>
 							<div>
-								<input class="input submit" type="submit" name="submit-bas" value="answer">
+								<button id="submit-bas" class="input submit">answer</button>
+								<button id="reset-bas" class="input submit">reset</button>
 							</div>
 						</fieldset>
-					</form>
 				</div>
 				<div id="Circle-Calc-wrap">
 					<!-- Calculator for Circles -->
@@ -571,5 +573,7 @@
 				</footer>
 			</div>
 		</div>
+
+		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>

@@ -112,6 +112,7 @@ body {
 	background-color: blue;
 	color: white;
 	padding-left: 0;
+	margin: 10px 60px;
 }
 .submit:hover {
 	background-color: white;
