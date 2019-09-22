@@ -17,8 +17,8 @@ body {
 	text-decoration: none;
 	letter-spacing: 3px;
 	font-weight: bolder;
-	text-shadow: 1px 1px 0 #000;
-	color: #f33;
+	text-shadow: 1px 1px 0 black;
+	color: red;
 }
 .links:hover {
 	text-decoration: underline;
@@ -50,7 +50,7 @@ body {
 	color: green;
 }
 .matics {
-	color: #f33;
+	color: red;
 }
 .project {
 	color: lightblue;
@@ -95,8 +95,10 @@ body {
 	height: 40px;
 	margin: 5px;
 	text-align: center;
+	letter-spacing: 5px;
 	font-size: 20pt;
-	color: #f22;
+	color: darkblue;
+	text-shadow: 1px 1px 4px blue;
 	padding-left: 20px;
 	background-color: white;
 	border-radius: 20px;
