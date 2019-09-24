@@ -31,7 +31,7 @@
 										</span>
 										<marquee>
 											<small class="school">
-												...Al-Aleem Academy...(Upon God Strength we Stand)
+												...Al-Aleem Academy...(Upon God's Strength we Stand)
 											</small>
 										</marquee>
 									</h4>
@@ -115,7 +115,36 @@
 									</small>
 								</label>
 								<br>
-								<input id="sign" class="input number" type="text" name="operator" placeholder="enter operator">
+								<select id="sign" class="input number">
+									<option id="option1">
+										select operator
+									</option>
+									<option value="+">
+										+
+									</option>
+									<option value="-">
+										-
+									</option>
+									<option value="*">
+										*
+									</option>
+									<option value="/">
+										/
+									</option>
+									<option value="%">
+										%
+									</option>
+									<option value="power">
+										power
+									</option>
+									<option value="square root">
+										square root
+									</option>
+									<option value="cube root">
+										cube root
+									</option>
+									<option id="error"></option>
+								</select>
 							</div>
 							<div>
 								<label class="label" for="number2">
@@ -139,23 +168,22 @@
 				</div>
 				<div id="Circle-Calc-wrap">
 					<!-- Calculator for Circles -->
-					<form id="circle-calc">
 						<fieldset class="fieldset circle fcright">
 							<legend id="circle" class="legend">
 								Circle
 							</legend>
 							<div>
-								<label class="label" for="PI">
+								<label class="label" for="cir-pi">
 									PI:
 								</label><br>
-								<input class="input number" type="number" name="PI" value="3.142857142857143" readonly>
+								<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
 							</div>
 							<div>
-								<label class="label" for="radius">
+								<label class="label" for="cir-radius">
 									Radius-( r ):
 								</label>
 								<br>
-								<input class="input number" type="number" name="radius" placeholder="radius">
+								<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
 							</div>
 							<div>
 								<label class="label" for="cir-area">
@@ -165,23 +193,23 @@
 									</small>
 								</label>
 								<br>
-								<input class="input number" type="number" name="cir-area	" placeholder="area">
+								<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
 							</div>
 							<div>
-								<label class="label" for="circumference">
+								<label class="label" for="cir-circumference">
 									Circumference/Perimeter-( C/P ) =
 									<small>
 										( 2 x PI x r )
 									</small>
 								</label>
 								<br>
-								<input class="input number" type="number" name="circumference" placeholder="circumference">
+								<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
 							</div>
 							<div>
-								<input class="input submit" type="submit" name="submit-cir" value="answer">
+								<button id="submit-cir" class="input submit">answer</button>
+								<button id="reset-cir" class="input submit">reset</button>
 							</div>
 						</fieldset>
-					</form>
 				</div>
 				<div id="Triangle-Calc-wrap">
 					<!-- Calculator for Triangles -->
