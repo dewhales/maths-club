@@ -306,3 +306,87 @@ function resetTrapeziumCalculator () {
 // Event Listeners for Trapezium Calculations
 submitTrapezium.addEventListener("click", submitTrapeziumCalculator);
 resetTrapezium.addEventListener("click", resetTrapeziumCalculator);
+
+// TRAPEZIUM CALCULATOR FUNCTIONS ENDS HERE---!
+
+
+
+// Cylinder Calculator Starts---!
+
+// Calculate Areas of Cylinder
+let submitCylinder = document.querySelector("#submit-cyl");
+function submitCylinderCalculator() {
+	let cylRadius = document.querySelector("#cyl-radius");
+	let cylHeight = document.querySelector("#cyl-height");
+	let cylCba = document.querySelector("#cyl-cba");
+	let cylCsa = document.querySelector("#cyl-csa");
+	let cylTsa = document.querySelector("#cyl-tsa");
+	let cylVolume = document.querySelector("#cyl-vol");
+	let cylPI = document.querySelector("#cyl-pi");
+	if(cylRadius.value.length > 0 && cylHeight.value.length > 0 && cylPI.value.length > 0) {
+		cylCba.value = parseFloat(PI) * parseFloat(parseFloat(cylRadius.value) **2);
+		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if(cylHeight.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
+		cylVolume.value = parseFloat(cylCba.value) * parseFloat(cylHeight.value);
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if (cylVolume.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
+		cylHeight.value = parseFloat(cylVolume.value) / parseFloat(cylCba.value);
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if(cylCba.value.length > 0 && cylCsa.value.length > 0 && cylPI.value.length > 0) {
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylTsa.value = parseFloat(parseFloat(parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if(cylTsa.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
+		cylCsa.value = parseFloat(cylTsa.value) - parseFloat(parseFloat(cylCba.value) * 2);
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
+		cylVolume.value = parseFloat(cylCba.value) * parseFloat(cylHeight.value);
+	}else if(cylTsa.value.length > 0 && cylCsa.value.length > 0 && cylPI.value.length > 0) {
+		cylCba.value = parseFloat((parseFloat(cylTsa.value) - parseFloat(cylCsa.value)) / 2);
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if(cylRadius.value.length > 0 && cylPI.value.length > 0) {
+		cylCba.value = parseFloat(cylPI.value) * parseFloat(parseFloat(cylRadius.value) **2);
+	}else if(cylCba.value.length > 0 && cylPI.value.length > 0) {
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+	}else if (cylVolume.value.length > 0 && cylHeight.value.length > 0 && cylPI.value.length > 0) {
+		cylCba.value = parseFloat(cylVolume.value) / parseFloat(cylHeight.value);
+		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}
+}
+
+// Function to reset Trapezium Calculator
+let resetCylinder = document.querySelector("#reset-cyl");
+function resetCylinderCalculator () {
+	let cylRadius = document.querySelector("#cyl-radius");
+	let cylHeight = document.querySelector("#cyl-height");
+	let cylCba = document.querySelector("#cyl-cba");
+	let cylCsa = document.querySelector("#cyl-csa");
+	let cylTsa = document.querySelector("#cyl-tsa");
+	let cylVolume = document.querySelector("#cyl-vol");
+	cylRadius.value = "";
+	cylHeight.value = "";
+	cylCba.value = "";
+	cylCsa.value = "";
+	cylTsa.value = "";
+	cylVolume.value = "";
+}
+
+// Event Listeners for Trapezium Calculations
+submitCylinder.addEventListener("click", submitCylinderCalculator);
+resetCylinder.addEventListener("click", resetCylinderCalculator);
+
+/*CYLINDER cALCULATOR ENDS HERE_-_!!!*/
