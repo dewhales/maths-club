@@ -62,7 +62,8 @@ body {
 .nav-buttons {
 	background-color: transparent;
 	border: none;
-	padding: 20px;
+	padding: 30px;
+	margin: 20px;
 }
 .calc {
 	font-weight:bold;
@@ -71,7 +72,8 @@ body {
 	border: 2px solid;
 	border-radius: 20px;
 	margin-left: 15px;
-	padding: 5px;
+	margin-top: 20px;
+	padding: 0px 10px;
 }
 .calc:hover {
 	color: blue;
