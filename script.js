@@ -1,11 +1,31 @@
 const PI = 3.142857142857143;
 
+
+
+
+
+
+
+
 /*Calculator for add, subtract, multiply, divide, modulus, power, square root and cube root.*/
 function basicCalculator () {
 	let num1 = document.querySelector("#num1");
 	let num2 = document.querySelector("#num2");
 	let operator = document.querySelector("#sign");
-	let resultBasic = document.querySelector("#result-bas")
+	let resultBasic = document.querySelector("#result-bas");
+	let base = [];
+	/*Converting from Base 10 to other Bases*/
+	function numberBase (x, y) {
+		if(parseInt(x) > 0){
+			result = parseInt(x) % parseInt(y);
+			base.unshift(parseInt(result));
+			x = parseInt(x) / parseInt(y);
+			if(parseInt(x) > 0) {
+				return numberBase(x, y);
+			}
+		}
+		return base.reduce((a,b) => a + String(b), "");
+	}
 	if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "+") {
 		resultBasic.value = parseFloat(num1.value) + parseFloat(num2.value);
 	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "-") {
@@ -26,10 +46,14 @@ function basicCalculator () {
 		resultBasic.value = Math.cbrt(parseFloat(num1.value));
 	}else if(operator.value == "select operator") {
 		alert("Syntax Error");
-		num1.value = 0;
-		num2.value = 0;
+		resultBasic.value = "";
+	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "base10") {
+		resultBasic.value = numberBase(num1.value,num2.value);
+	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "baseX") {
+		resultBasic.value = parseInt(num1.value,num2.value);
 	}else {
-		alert("Maths Error!");
+		alert("Math Error!");
+		resultBasic.value = "";
 	}
 }
 
@@ -60,65 +84,71 @@ resetBasic.addEventListener("click", resetCalculator);
 /*Circle Calculator Starts*/
 
 
-/*Calculate Area formular(PI.r2)*/
-const findValueOfArea = () => {
-	let radius = document.querySelector("#cir-radius").value;
-	let val = parseFloat(PI) * (parseFloat(radius **2));
-	let area = document.querySelector('#cir-area').setAttribute('value', val);
-}
-
-/*Find Radius of the Circle Using the value of Area*/
-const findValueOfRadiusA = () => {
-	let area = document.querySelector('#cir-area').value;
-	let val = Math.sqrt(parseFloat(area) / parseFloat(PI));
-	let radius = document.querySelector("#cir-radius").setAttribute('value', val);
-}
-
-/*Find Circumference of the Circle using formular(2.PI.r)*/
-const findValueOfCircumference = () => {
-	let radius = document.querySelector("#cir-radius").value;
-	let area = document.querySelector("#cir-area").value;
-	let val = 2 * (parseFloat(PI) * parseFloat(radius));
-	let circumference = document.querySelector("#cir-circumference").setAttribute('value', val);
-}
-
-/*Find Radius of the Circle Using the value of Circumference*/
-const findValueOfRadiusC = () => {
-	let circumference = document.querySelector("#cir-circumference").value;
-	let val = parseFloat(circumference) / parseFloat(2 * parseFloat(PI));
-	let radius = document.querySelector('#cir-radius').setAttribute('value', val)
-}
-
-/*Find the missing variable in the given Circle ON CLICK.*/
+/*Calculate Area of Circle*/
 let submitCircle = document.querySelector("#submit-cir");
-const finalAnserOnClick = () => {
-	let radius = document.querySelector('#cir-radius').value;
-	let area = document.querySelector('#cir-area').value;
-	let circumference = document.querySelector("#cir-circumference").value;
-	if (parseFloat(radius) > 0) {
-		findValueOfArea();
-		findValueOfCircumference();
-	} else if (parseFloat(area) > 0) {
-		findValueOfRadiusA();
-		findValueOfCircumference();
-	} else if (parseFloat(circumference) > 0) {
-		findValueOfRadiusC();
-		findValueOfArea();
+function submitCircleCalculator() {
+	let cirArea = document.querySelector("#cir-area");
+	let cirRadius = document.querySelector("#cir-radius");
+	let cirCircumference = document.querySelector("#cir-circumference");
+	let cirAngle = document.querySelector("#cir-angle");
+	let cirSector = document.querySelector("#cir-sector");
+	let cirPI = document.querySelector("#cir-pi");
+	if(cirSector.value.length > 0 && cirRadius.value.length > 0 && cirPI.value.length > 0) {
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value));
+	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+	}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+	}else if(cirSector.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value);
+		cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+	}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0 && cirPI.value.length > 0) {
+		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value);
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+	}else if(cirArea.value.length > 0 || cirCircumference.value.length > 0) {
+		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
 	}
 }
 
+/*Reset Circle Calculator*/
 let resetCircle = document.querySelector("#reset-cir");
 function resetCircleCalculator() {
-	let radius = document.querySelector("#cir-radius");
-	let area = document.querySelector("#cir-area");
-	let circumference = document.querySelector("#cir-circumference");
-	radius.value = "";
-	area.value = "";
-	circumference.value = "";
+	let cirRadius = document.querySelector("#cir-radius");
+	let cirAngle = document.querySelector("#cir-angle");
+	let cirSector = document.querySelector("#cir-sector");
+	let cirArea = document.querySelector("#cir-area");
+	let cirCircumference = document.querySelector("#cir-circumference");
+	cirRadius.value = "";
+	cirArea.value = "";
+	cirSector.value = "";
+	cirAngle.value = "";
+	cirCircumference.value = "";
 }
 
+
+
+
 /*Event Listeners for Circle Calculations*/
-submitCircle.addEventListener("click", finalAnserOnClick);
+submitCircle.addEventListener("click", submitCircleCalculator);
 resetCircle.addEventListener("click", resetCircleCalculator);
 
 // CIRCLE CALCULATOR FUNCTIONS ENDS HERE---!
@@ -318,12 +348,14 @@ let submitCylinder = document.querySelector("#submit-cyl");
 function submitCylinderCalculator() {
 	let cylRadius = document.querySelector("#cyl-radius");
 	let cylHeight = document.querySelector("#cyl-height");
+	let cylCircumference = document.querySelector("#cyl-circumference");
 	let cylCba = document.querySelector("#cyl-cba");
 	let cylCsa = document.querySelector("#cyl-csa");
 	let cylTsa = document.querySelector("#cyl-tsa");
 	let cylVolume = document.querySelector("#cyl-vol");
 	let cylPI = document.querySelector("#cyl-pi");
 	if(cylRadius.value.length > 0 && cylHeight.value.length > 0 && cylPI.value.length > 0) {
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylCba.value = parseFloat(PI) * parseFloat(parseFloat(cylRadius.value) **2);
 		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
 		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
@@ -331,23 +363,34 @@ function submitCylinderCalculator() {
 	}else if(cylHeight.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
 		cylVolume.value = parseFloat(cylCba.value) * parseFloat(cylHeight.value);
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
 		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
 		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
 	}else if (cylVolume.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
 		cylHeight.value = parseFloat(cylVolume.value) / parseFloat(cylCba.value);
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
 		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
 		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+	}else if(cylHeight.value.length > 0 && cylCircumference.value.length > 0 && cylPI.value.length > 0) {
+		cylRadius.value = parseFloat(cylCircumference.value) / (parseFloat(2) * parseFloat(PI));
+		cylCba.value = parseFloat(PI) * parseFloat(parseFloat(cylRadius.value) **2);
+		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
+		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+		cylHeight.value = parseFloat(cylVolume.value) / parseFloat(cylCba.value);
 	}else if(cylCba.value.length > 0 && cylCsa.value.length > 0 && cylPI.value.length > 0) {
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylTsa.value = parseFloat(parseFloat(parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
 		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
 		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
 	}else if(cylTsa.value.length > 0 && cylCba.value.length > 0 && cylPI.value.length > 0) {
 		cylCsa.value = parseFloat(cylTsa.value) - parseFloat(parseFloat(cylCba.value) * 2);
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
 		cylVolume.value = parseFloat(cylCba.value) * parseFloat(cylHeight.value);
 	}else if(cylTsa.value.length > 0 && cylCsa.value.length > 0 && cylPI.value.length > 0) {
@@ -355,14 +398,21 @@ function submitCylinderCalculator() {
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
 		cylHeight.value = parseFloat(cylCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value));
 		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 	}else if(cylRadius.value.length > 0 && cylPI.value.length > 0) {
 		cylCba.value = parseFloat(cylPI.value) * parseFloat(parseFloat(cylRadius.value) **2);
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 	}else if(cylCba.value.length > 0 && cylPI.value.length > 0) {
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
+	}else if(cylCircumference.value.length > 0 && cylPI.value.length > 0) {
+		cylRadius.value = parseFloat(cylCircumference.value) / (parseFloat(2) * parseFloat(PI));
+		cylCba.value = parseFloat(PI) * parseFloat(parseFloat(parseFloat(cylRadius.value) **2));
 	}else if (cylVolume.value.length > 0 && cylHeight.value.length > 0 && cylPI.value.length > 0) {
 		cylCba.value = parseFloat(cylVolume.value) / parseFloat(cylHeight.value);
 		cylRadius.value = Math.sqrt(parseFloat(cylCba.value) / parseFloat(cylPI.value));
 		cylCsa.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value) * parseFloat(cylHeight.value);
+		cylCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cylRadius.value);
 		cylTsa.value = parseFloat((parseFloat(cylCba.value) * 2) + parseFloat(cylCsa.value));
 		cylVolume.value = parseFloat(PI) * (parseFloat(cylRadius.value) **2) * parseFloat(cylHeight.value);
 	}
@@ -377,12 +427,14 @@ function resetCylinderCalculator () {
 	let cylCsa = document.querySelector("#cyl-csa");
 	let cylTsa = document.querySelector("#cyl-tsa");
 	let cylVolume = document.querySelector("#cyl-vol");
+	let cylCircumference = document.querySelector("#cyl-circumference");
 	cylRadius.value = "";
 	cylHeight.value = "";
 	cylCba.value = "";
 	cylCsa.value = "";
 	cylTsa.value = "";
 	cylVolume.value = "";
+	cylCircumference.value = "";
 }
 
 // Event Listeners for Trapezium Calculations

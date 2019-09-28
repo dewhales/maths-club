@@ -1,16 +1,14 @@
 body {
-	background: darkblue;
-	/* background: url('img/ss3ac.jpg'); */
-	background-position: bottom;
+	background: #900748;
 }
 .head {
 	width: 100%;
+	padding: 0px;
 }
 .nav {
 	width: 100%;
-	border: 3px solid lightblue;
 	border-collapse: collapse;
-	background-color: darkblue;
+	background-color: #f5c1a9;
 	font-family: helvetica;
 }
 .links {
@@ -22,7 +20,7 @@ body {
 }
 .links:hover {
 	text-decoration: underline;
-	color: white;
+	color: #a21155;
 }
 .left {
 	width: 50%;
@@ -36,8 +34,7 @@ body {
 	font-size: 20pt;
 }
 .school {
-	color: lightblue;
-	text-shadow: 1px 0 0 darkblue;
+	color: gray;
 	font-style: italic;
 	font-size: 10pt;
 	font-family: helvetica;
@@ -50,14 +47,14 @@ body {
 	color: green;
 }
 .matics {
-	color: red;
-}
-.project {
-	color: lightblue;
-	font-family: alison;
+	color: #900748;
 }
 .club {
-	color: #ffffff;
+	color: gray;
+}
+.project {
+	color: gray;
+	font-family: alison;
 }
 .nav-buttons {
 	background-color: transparent;
@@ -76,7 +73,7 @@ body {
 	padding: 0px 10px;
 }
 .calc:hover {
-	color: blue;
+	color: #dd438b;
 	text-decoration: none;
 }
 .legend {
@@ -99,35 +96,36 @@ body {
 	text-align: center;
 	letter-spacing: 5px;
 	font-size: 20pt;
-	color: darkblue;
-	text-shadow: 1px 1px 4px blue;
+	color: #900748;
+	text-shadow: 1px 1px 4px #dd438b;
 	padding-left: 20px;
 	background-color: white;
 	border-radius: 20px;
 	border: none;
-	border-bottom: 4px solid gray;
+	border-bottom: 4px solid #dd438b;
 	margin-bottom: 20px;
 }
 .submit {
 	width: 150px;
-	border: 3px solid lightblue;
-	background-color: blue;
+	border: 3px solid white;
+	background-color: #760336;
 	color: white;
 	padding-left: 0;
 	margin: 10px 60px;
 }
 .submit:hover {
 	background-color: white;
-	color: darkblue;
+	color: #760336;
+	font-weight: bold;
 }
 .fcleft {
-	background-color: transparent;
+	background-color: #7e043a;
 	margin-top: 40px;
 	width: 45%;
 	float: left;
 }
 .fcright {
-	background-color: transparent;
+	background-color: #7e043a;
 	margin-top: 40px;
 	width: 45%;
 	float: right;
@@ -140,8 +138,8 @@ body {
 	padding: 20px;
 	font-size: 2rem;
 	letter-spacing: 4px;
-	color: lightgray;
-	text-shadow: 1px 0 0 darkblue
+	color: #f5c1a9;
+	text-shadow: 1px 0 0 #f5c1a9;
 }
 #About-head {
 	font-size: 3rem;
@@ -162,7 +160,7 @@ body {
 	padding: 10px;
 }
 .article-head {
-	color: lightblue;
+	color: #f5c1a9;
 }
 #about-table {
 	width: 100%;

@@ -11,9 +11,12 @@
 	</head>
 	<body>
 		<div id="container">
-			<header id="header">
-				<img class="img head" src="img/banner.jpg">
-			</header>
+			<div id="header-wrap">
+				<header id="header">
+					<img class="img head" src="img/banner.jpg">
+				</header>
+			</div>
+
 			<div id="nav-wrap">
 				<div id="nav-container">
 					<table border="0" class="nav table">
@@ -109,7 +112,7 @@
 							<label class="label" for="operator">
 								Operators:
 								<small>
-									" + "," - "," * "," / "," % ","power","square root","cube root"
+									+ , - , * , / , modulus , power , square root , cube root , number&nbsp;bases .
 								</small>
 							</label>
 							<br>
@@ -140,6 +143,12 @@
 								</option>
 								<option value="cube root">
 									cube root
+								</option>
+								<option value="base10">
+									from base 10 to base
+								</option>
+								<option value="baseX">
+									other bases to base 10
 								</option>
 							</select>
 						</div>
@@ -191,6 +200,26 @@
 							</label>
 							<br>
 							<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
+						</div>
+						<div>
+							<label class="label" for="cir-angle">
+								Angle-( X<sup> o</sup> ) =
+								<small>
+									(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
+						</div>
+						<div>
+							<label class="label" for="cir-sector">
+								Sector Area-( SA ) =
+								<small>
+									(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
 						</div>
 						<div>
 							<label class="label" for="cir-circumference">
@@ -360,6 +389,16 @@
 							<input id="cyl-height" class="input number" type="number" name="cyl-height" placeholder="height">
 						</div>
 						<div>
+							<label class="label" for="cyl-circumference">
+								Circumference-( C ) =
+								<small>
+									( 2 x PI x r )
+								</small>
+							</label>
+							<br>
+							<input id="cyl-circumference" class="input number" type="number" name="cyl-csa" placeholder="circumference">
+						</div>
+						<div>
 							<label class="label" for="cyl-cba">
 								Circular Base Area-( CBA ) =
 								<small>
@@ -513,7 +552,7 @@
 								<hr>
 							</td>
 							<td>
-								Abdulrasheed Abdulsamad Adewale
+								Abdulsamad Adewale Abdulrasheed
 								<hr>
 							</td>
 						</tr>
