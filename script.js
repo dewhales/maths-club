@@ -1,11 +1,5 @@
 const PI = 3.142857142857143;
-
-
-
-
-
-
-
+const RAD = 57.29577951;
 
 /*Calculator for add, subtract, multiply, divide, modulus, power, square root and cube root.*/
 function basicCalculator () {
@@ -14,18 +8,6 @@ function basicCalculator () {
 	let operator = document.querySelector("#sign");
 	let resultBasic = document.querySelector("#result-bas");
 	let base = [];
-	/*Converting from Base 10 to other Bases*/
-	function numberBase (x, y) {
-		if(parseInt(x) > 0){
-			result = parseInt(x) % parseInt(y);
-			base.unshift(parseInt(result));
-			x = parseInt(x) / parseInt(y);
-			if(parseInt(x) > 0) {
-				return numberBase(x, y);
-			}
-		}
-		return base.reduce((a,b) => a + String(b), "");
-	}
 	if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "+") {
 		resultBasic.value = parseFloat(num1.value) + parseFloat(num2.value);
 	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "-") {
@@ -38,19 +20,22 @@ function basicCalculator () {
 		resultBasic.value = parseFloat(num1.value) ** parseFloat(num2.value);
 	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "modulus") {
 		resultBasic.value = Math.floor(parseFloat(num1.value) / parseFloat(num2.value)) + " rem " + parseFloat(num1.value) % parseFloat(num2.value);
+	}else if(num1.value.length > 0 && num2.value == 10 && operator.value == "logarithm") {
+		resultBasic.value = Math.log10(num1.value);
+	}else if(num1.value.length > 0 && num2.value == 2 && operator.value == "logarithm") {
+		resultBasic.value = Math.log2(num1.value);
 	}else if(num1.value.length > 0 && operator.value == "square root") {
 		num2.value = 0;
 		resultBasic.value = Math.sqrt(parseFloat(num1.value));
 	}else if(num1.value.length > 0 && operator.value == "cube root") {
 		num2.value = 0;
 		resultBasic.value = Math.cbrt(parseFloat(num1.value));
+	}else if(num2.value.length > 0 && operator.value == "random number") {
+		num1.value = 10;
+		resultBasic.value = Math.floor(Math.random() * Math.pow(10, num2.value));
 	}else if(operator.value == "select operator") {
 		alert("Syntax Error");
 		resultBasic.value = "";
-	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "base10") {
-		resultBasic.value = numberBase(num1.value,num2.value);
-	}else if(num1.value.length > 0 && num2.value.length > 0 && operator.value == "baseX") {
-		resultBasic.value = parseInt(num1.value,num2.value);
 	}else {
 		alert("Math Error!");
 		resultBasic.value = "";
@@ -97,11 +82,19 @@ function submitCircleCalculator() {
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value));
+		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value)));
 	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
 		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+	}else if(cirAngle.value.length > 0 && cirSector.value.length > 0 && cirPI.value.length > 0){
+		if(cirAngle.value >= 7 && cirSector.value.length > 0) {
+			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
+		}else if(cirAngle.value < 7 && cirAngle.value >= 0 && cirSector.value.length > 0) {
+			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value)));
+		}
+		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
 	}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
@@ -110,13 +103,13 @@ function submitCircleCalculator() {
 		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 	}else if(cirSector.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value);
+		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
 		cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 	}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0 && cirPI.value.length > 0) {
 		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value);
+		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
 		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
@@ -170,7 +163,7 @@ function submitTriangleCalculator() {
 	if(triBase.value.length > 0 && triHeight.value.length > 0) {
 		let result = (parseFloat(triBase.value) * parseFloat(triHeight.value)) / 2;
 		triArea.value = result;
-		let slantHeight = Math.sqrt(parseFloat(triBase.value **2) + parseFloat(triHeight.value **2));
+		let slantHeight = Math.sqrt((parseFloat(triBase.value / 2) **2) + (parseFloat(triHeight.value) **2));
 		let resultPer = parseFloat(slantHeight) + parseFloat(slantHeight) + parseFloat(triBase.value);
 		triPerimeter.value = resultPer;
 	}else if(triBase.value.length > 0 && triArea.value.length > 0) {
@@ -226,24 +219,34 @@ function submitRectangleCalculator () {
 		rectBreadth.value = parseFloat(rectArea.value / rectLength.value);
 	}else if(rectBreadth.value.length > 0 && rectArea.value.length > 0) {
 		rectLength.value = parseFloat(rectArea.value / rectBreadth.value);
-	}else if(rectPerimeter.value.length > 0) {
-		rectLength.value = parseFloat(rectPerimeter.value / 4);
-		rectBreadth.value = rectLength.value;
-		rectArea.value = parseFloat(rectLength.value * rectBreadth.value);
-		rectLength.value = Math.sqrt(rectArea.value);
-		rectBreadth.value = Math.sqrt(rectArea.value);
-		rectPerimeter.value = parseFloat((2 * (parseFloat(rectLength.value)) + (2*(parseFloat(rectBreadth.value)))));
-		alert("This is applicable to SQUARE's only!!!");
-	}else if(rectArea.value.length > 0) {
+	}else if(rectPerimeter.value.length > 0 || rectArea.value.length > 0) {
+		if(rectPerimeter.value.length > 0) {
+			rectLength.value = parseFloat(rectPerimeter.value / 4);
+			rectBreadth.value = rectLength.value;
+			rectArea.value = parseFloat(rectLength.value * rectBreadth.value);
 			rectLength.value = Math.sqrt(rectArea.value);
-		rectBreadth.value = Math.sqrt(rectArea.value);
-		rectPerimeter.value = parseFloat((2 * (parseFloat(rectLength.value)) + (2*(parseFloat(rectBreadth.value)))));
-		alert("This is applicable to SQUARE's only!!!");
+			rectBreadth.value = Math.sqrt(rectArea.value);
+			rectPerimeter.value = parseFloat((2 * (parseFloat(rectLength.value)) + (2*(parseFloat(rectBreadth.value)))));
+			alert("This is applicable to SQUARE's only!!!");
+		}else if(rectArea.value.length > 0) {
+			rectLength.value = Math.sqrt(rectArea.value);
+			rectBreadth.value = Math.sqrt(rectArea.value);
+			rectPerimeter.value = parseFloat((2 * (parseFloat(rectLength.value)) + (2*(parseFloat(rectBreadth.value)))));
+			alert("This is applicable to SQUARE's only!!!");
+		}
 	}else if(rectLength.value.length > 0 || rectBreadth.value.length > 0) {
-		rectBreadth.value = rectLength.value;
-		rectArea.value = rectLength.value * rectBreadth.value;
-		rectPerimeter.value = parseFloat((2 * (parseFloat(rectLength.value)) + (2*(parseFloat(rectBreadth.value)))));
-		alert("This is applicable to SQUARE's only!!!");
+		if(rectLength.value.length > 0) {
+			rectBreadth.value = rectLength.value;
+			rectArea.value = rectLength.value * rectBreadth.value;
+			rectPerimeter.value = parseFloat(2 * (parseFloat(rectLength.value)) + (2 * (parseFloat(rectBreadth.value))));
+			alert("This is applicable to SQUARE's only!!!");
+		}else if (rectBreadth.value.length > 0) {
+			rectLength.value = rectBreadth.value;
+			rectArea.value = rectLength.value * rectBreadth.value;
+			rectPerimeter.value = parseFloat(2 * (parseFloat(rectLength.value)) + (2 * (parseFloat(rectBreadth.value))));
+			alert("This is applicable to SQUARE's only!!!");
+		}
+
 	}
 }
 
@@ -442,3 +445,56 @@ submitCylinder.addEventListener("click", submitCylinderCalculator);
 resetCylinder.addEventListener("click", resetCylinderCalculator);
 
 /*CYLINDER cALCULATOR ENDS HERE_-_!!!*/
+
+
+
+
+
+function baseCalculator () {
+	let numberBase = document.querySelector("#number");
+	let baseNumber = document.querySelector("#base-number");
+	let operator = document.querySelector("#number-base");
+	let resultBase = document.querySelector("#result-base");
+	let base = [];
+	/*Converting from Base 10 to other Bases*/
+	function numberBaseFunc (x, y) {
+		if(parseInt(x) > 0){
+			result = parseInt(x) % parseInt(y);
+			base.unshift(parseInt(result));
+			x = parseInt(x) / parseInt(y);
+			if(parseInt(x) > 0) {
+				return numberBaseFunc(x, y);
+			}
+		}
+		return base.reduce((a,b) => a + String(b), "");
+	}
+	if(numberBase.value.length > 0 && baseNumber.value.length > 0 && operator.value == "base10") {
+		resultBase.value = numberBaseFunc(numberBase.value,baseNumber.value);
+	}else if(numberBase.value.length > 0 && baseNumber.value.length > 0 && operator.value == "baseX") {
+		resultBase.value = parseInt(numberBase.value,baseNumber.value);
+	}else if(operator.value == "select operator") {
+		alert("Syntax Error");
+		resultBase.value = "";
+	}else {
+		alert("Math Error!");
+		resultBase.value = "";
+	}
+}
+
+// Reset button for basic calculator
+function resetBaseCalculator() {
+	let numberBase = document.querySelector("#number");
+	let baseNumber = document.querySelector("#base-number");
+	let operator = document.querySelector("#number-base");
+	let resultBase = document.querySelector("#result-base");
+	baseNumber.value = "";
+	numberBase.value = "";
+	resultBase.value = "";
+	operator.value = document.querySelector("#option2").value;
+}
+
+let submitBase = document.querySelector("#submit-base");
+let resetBase = document.querySelector("#reset-base");
+/*Event Listeners for Basic Calculator*/
+submitBase.addEventListener("click", baseCalculator);
+resetBase.addEventListener("click", resetBaseCalculator);

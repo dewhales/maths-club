@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>
-			Al-Aleem Maths Club
+			Maths Club | Multipurpose Calculator
 		</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -70,30 +70,56 @@
 						<legend class="legend">
 							Multipurpose Calculator
 						</legend>
-						<a class="calc links" href="#basic">
-							Calculator
-						</a>
-						<a class="calc links" href="#circle">
-							Circle
-						</a>
-						<a class="calc links" href="#triangle">
-							Triangle
-						</a>
-						<a class="calc links" href="#rectangle">
-							Rectangle
-						</a>
-						<a class="calc links" href="#rectangle">
-							Square
-						</a>
-						<a class="calc links" href="#parallelogram">
-							Parallelogram
-						</a>
-						<a class="calc links" href="#cylinder">
-							Cylinder
-						</a>
-						<a class="calc links" href="#trapezium">
-							Trapezium
-						</a>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#basic">
+								Calculator
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#converter">
+								Converter
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#circle">
+								Circle
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#triangle">
+								Triangle
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#rectangle">
+								Rectangle
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#rectangle">
+								Square
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#parallelogram">
+								Parallelogram
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#cylinder">
+								Cylinder
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#trapezium">
+								Trapezium
+							</a>
+						</div>
+						<div class = "navigation-block links">
+							<a class="calc links" href="#num-base">
+								Number Bases
+							</a>
+						</div>
 					</fieldset>
 				</div>
 				<div id="basic-calc-wrap">
@@ -103,7 +129,7 @@
 							Calculator
 						</legend>
 						<div>
-							<label class="label" for="number1">
+							<label class="label" for="num1">
 								First Number:
 							</label><br>
 							<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
@@ -112,7 +138,7 @@
 							<label class="label" for="operator">
 								Operators:
 								<small>
-									+ , - , * , / , modulus , power , square root , cube root , number&nbsp;bases .
+									+ , - , * , / , modulus , power , square root , cube root , random number.
 								</small>
 							</label>
 							<br>
@@ -144,20 +170,20 @@
 								<option value="cube root">
 									cube root
 								</option>
-								<option value="base10">
-									from base 10 to base
+								<option value="logarithm">
+									logarithm
 								</option>
-								<option value="baseX">
-									other bases to base 10
+								<option value="random number">
+									random number
 								</option>
 							</select>
 						</div>
 						<div>
-							<label class="label" for="number2">
-								Second Number:
+							<label class="label" for="num2">
+								Second Number: power-index, log-base(<small>2 or 10</small>).
 							</label>
 							<br>
-							<input id="num2" class="input number" type="number" name="number2" placeholder="enter second number">
+							<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
 						</div>
 						<div>
 							<label class="label" for="result">
@@ -172,68 +198,55 @@
 						</div>
 					</fieldset>
 				</div>
-				<div id="Circle-Calc-wrap">
-					<!-- Calculator for Circles -->
-					<fieldset class="fieldset circle fcright">
-						<legend id="circle" class="legend">
-							Circle
+				<div id="Number-Base-calc-wrap">
+					<!-- Basic calculator -->
+					<fieldset class="fieldset base fcright">
+						<legend id="num-base" class="legend">
+							Number Bases
 						</legend>
 						<div>
-							<label class="label" for="cir-pi">
-								PI:
+							<label class="label" for="number">
+								Number:
 							</label><br>
-							<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
+							<input id="number" class="input number" type="number" name="number" placeholder="enter number">
 						</div>
 						<div>
-							<label class="label" for="cir-radius">
-								Radius-( r ):
-							</label>
-							<br>
-							<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
-						</div>
-						<div>
-							<label class="label" for="cir-area">
-								Area-( A ) =
+							<label class="label" for="operator">
+								Operators:
 								<small>
-									( PI x r<sup>2</sup> )
+									"from base 10 to base" and "other bases to base 10".
 								</small>
 							</label>
 							<br>
-							<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
+							<select id="number-base" class="input number">
+								<option id="option2">
+									select operator
+								</option>
+								<option value="base10">
+									from base 10 to base
+								</option>
+								<option value="baseX">
+									other bases to base 10
+								</option>
+							</select>
 						</div>
 						<div>
-							<label class="label" for="cir-angle">
-								Angle-( X<sup> o</sup> ) =
-								<small>
-									(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
-								</small>
+							<label class="label" for="base-number">
+								base number:
 							</label>
 							<br>
-							<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
+							<input id="base-number" class="input number" type="number" name="base-base" placeholder="enter base number">
 						</div>
 						<div>
-							<label class="label" for="cir-sector">
-								Sector Area-( SA ) =
-								<small>
-									(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
-								</small>
+							<label class="label" for="result-base">
+								Result:
 							</label>
 							<br>
-							<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
+							<input id="result-base" class="input number" type="text" name="result-base" placeholder="result">
 						</div>
 						<div>
-							<label class="label" for="cir-circumference">
-								Circumference/Perimeter-( C/P ) =
-								<small>
-									( 2 x PI x r )
-								</small>
-							</label>
-							<br>
-							<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
-						</div>
-						<div>
-							<button id="submit-cir" class="input submit">answer</button>
-							<button id="reset-cir" class="input submit">reset</button>
+							<button id="submit-base" class="input submit">answer</button>
+							<button id="reset-base" class="input submit">reset</button>
 						</div>
 					</fieldset>
 				</div>
@@ -327,9 +340,60 @@
 						</div>
 					</fieldset>
 				</div>
+				<div id="converter-calc-wrap">
+					<!-- Basic calculator -->
+					<fieldset class="fieldset converter fcleft">
+						<legend id="converter" class="legend">
+							Converter
+						</legend>
+						<div>
+							<label class="label" for="num1">
+								Number:
+							</label><br>
+							<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
+						</div>
+						<div>
+							<label class="label" for="operator">
+								Conversion:
+								<small>
+									rad-deg, g-kg
+								</small>
+							</label>
+							<br>
+							<select id="sign" class="input number">
+								<option id="option1">
+									select operator
+								</option>
+								<option value="+">
+									+
+								</option>
+								<option value="-">
+									-
+								</option>
+								<option value="*">
+									*
+								</option>
+								<option value="/">
+									/
+								</option>
+							</select>
+						</div>
+						<div>
+							<label class="label" for="num2">
+								Second Number: power-index, log-base(<small>2 or 10</small>).
+							</label>
+							<br>
+							<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
+						</div>
+						<div>
+							<button id="submit-bas" class="input submit">answer</button>
+							<button id="reset-bas" class="input submit">reset</button>
+						</div>
+					</fieldset>
+				</div>
 				<div id="Parallelogram-Calc-wrap">
 					<!-- Calculator for Parallelograms -->
-					<fieldset class="fieldset parallelogram fcleft">
+					<fieldset class="fieldset parallelogram fcright">
 						<legend id="parallelogram" class="legend">
 							Parallelogram
 						</legend>
@@ -359,6 +423,71 @@
 						<div>
 							<button id="submit-par" class="input submit">answer</button>
 							<button id="reset-par" class="input submit">reset</button>
+						</div>
+					</fieldset>
+				</div>
+				<div id="Circle-Calc-wrap">
+					<!-- Calculator for Circles -->
+					<fieldset class="fieldset circle fcleft">
+						<legend id="circle" class="legend">
+							Circle
+						</legend>
+						<div>
+							<label class="label" for="cir-pi">
+								PI:
+							</label><br>
+							<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
+						</div>
+						<div>
+							<label class="label" for="cir-radius">
+								Radius-( r ):
+							</label>
+							<br>
+							<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
+						</div>
+						<div>
+							<label class="label" for="cir-area">
+								Area-( A ) =
+								<small>
+									( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
+						</div>
+						<div>
+							<label class="label" for="cir-angle">
+								Angle-( X<sup> o</sup> ) =
+								<small>
+									(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
+						</div>
+						<div>
+							<label class="label" for="cir-sector">
+								Sector Area-( SA ) =
+								<small>
+									(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
+						</div>
+						<div>
+							<label class="label" for="cir-circumference">
+								Circumference/Perimeter-( C/P ) =
+								<small>
+									( 2 x PI x r )
+								</small>
+							</label>
+							<br>
+							<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
+						</div>
+						<div>
+							<button id="submit-cir" class="input submit">answer</button>
+							<button id="reset-cir" class="input submit">reset</button>
 						</div>
 					</fieldset>
 				</div>
