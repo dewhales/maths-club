@@ -169,7 +169,8 @@ body {
 }
 #footer-wrap {
 	text-align: center;
+	font-size: 50%;
 	background-color: black;
 	color: #fff;
-	padding: 10px;
+	padding: 1%;
 }
