@@ -1,767 +1,561 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>
-			Maths Club | Multipurpose Calculator
-		</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<div id="container">
-			<div id="header-wrap">
-				<header id="header">
-					<img class="img head" src="banner.jpg">
-				</header>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>
+    	Maths Club | Multipurpose Calculator
+    </title>
+  </head>
+  <body>
+  	<div id="header-wrap">
+		<header class="header">
+			<img class="img header" src="Banner.jpg" alt="al-aleem banner">
+		</header>
+	</div>
+	<div>
+		<nav class="navbar navbar-expand-lg nav sticky-top">
+			<h3 class="head">
+				<span class="maths matics">
+					Maths
+				</span>
+				<span class="maths club">
+					club
+				</span>
+				<span class="maths project">
+					project
+				</span><br>
+				<marquee>
+					<small class="school">
+						...Al-Aleem Academy...(Upon God's Strength we Stand)
+					</small>
+				</marquee>
+			</h3>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" value="c">
+				<span style="background-color: #900748; border-radius: 50%;" class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link links" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link links" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link links" href="#">Contact</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle links" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dropdown
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<ul class="navbar-nav nav">
+								<a class="dropdown-item" href="#">login</a>
+								<a class="dropdown-item" href="#">Register</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
 			</div>
-
-			<div id="nav-wrap">
-				<div id="nav-container">
-					<table border="0" class="nav table">
-						<tr class="row">
-							<td class="table cells left">
-									<h4 id="mathematics">
-										<span class="maths matics">
-											mathematics
-										</span>
-										<span class="maths club">
-											club
-										</span>
-										<span class="maths project">
-											project
-										</span>
-										<marquee>
-											<small class="school">
-												...Al-Aleem Academy...(Upon God's Strength we Stand)
-											</small>
-										</marquee>
-									</h4>
-							</td>
-							<td class="table cells right">
-								<a class="links" href="#mathematics" selected>
-									Home
-								</a>
-							</td>
-							<td class="table cells right">
-								<a class="links" href="#About-head">
-									About
-								</a>
-							</td>
-							<td class="table cells right">
-								<a class="links" href="#table-contact">
-									Contact
-								</a>
-							</td>
-							<td class="table cells right">
-								<a class="links" href="#">
-									Credits
-								</a>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div id="content-wrap">
-				<!-- navigation tabs for the varieties of calculators -->
-				<div class="calc-navigation-wrap">
-					<fieldset class="fieldset nav-buttons">
-						<legend class="legend">
-							Multipurpose Calculator
-						</legend>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#basic">
-								Calculator
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#converter">
-								Converter
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#circle">
-								Circle
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#triangle">
-								Triangle
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#rectangle">
-								Rectangle
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#rectangle">
-								Square
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#parallelogram">
-								Parallelogram
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#cylinder">
-								Cylinder
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#trapezium">
-								Trapezium
-							</a>
-						</div>
-						<div class = "navigation-block links">
-							<a class="calc links" href="#num-base">
-								Number Bases
-							</a>
-						</div>
-					</fieldset>
-				</div>
-				<div id="basic-calc-wrap">
-					<!-- Basic calculator -->
-					<fieldset class="fieldset calculator fcleft">
-						<legend id="basic" class="legend">
+		</nav>
+	</div>
+	<div id="content-wrap">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlinksSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span style="background-color: #f5c1a9; border-radius: 50%;" class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navlinksSupportedContent">
+			<div class="calc-navigation-wrap">
+				<h3 class="multiple">
+					Multipurpose Calculator
+				</h3>
+				<div class="d-flex flex-row flex-wrap flex-container">
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#basic">
 							Calculator
-						</legend>
-						<div>
-							<label class="label" for="num1">
-								First Number:
-							</label><br>
-							<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
-						</div>
-						<div>
-							<label class="label" for="operator">
-								Operators:
-								<small>
-									+ , - , * , / , modulus , power , square root , cube root , random number.
-								</small>
-							</label>
-							<br>
-							<select id="sign" class="input number">
-								<option id="option1">
-									select operator
-								</option>
-								<option value="+">
-									+
-								</option>
-								<option value="-">
-									-
-								</option>
-								<option value="*">
-									*
-								</option>
-								<option value="/">
-									/
-								</option>
-								<option value="modulus">
-									modulus
-								</option>
-								<option value="power">
-									power
-								</option>
-								<option value="square root">
-									square root
-								</option>
-								<option value="cube root">
-									cube root
-								</option>
-								<option value="logarithm">
-									logarithm
-								</option>
-								<option value="random number">
-									random number
-								</option>
-							</select>
-						</div>
-						<div>
-							<label class="label" for="num2">
-								Second Number: power-index, log-base(<small>2 or 10</small>).
-							</label>
-							<br>
-							<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
-						</div>
-						<div>
-							<label class="label" for="result">
-								Result:
-							</label>
-							<br>
-							<input id="result-bas" class="input number" type="text" name="result" placeholder="result">
-						</div>
-						<div>
-							<button id="submit-bas" class="input submit">answer</button>
-							<button id="reset-bas" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Number-Base-calc-wrap">
-					<!-- Basic calculator -->
-					<fieldset class="fieldset base fcright">
-						<legend id="num-base" class="legend">
-							Number Bases
-						</legend>
-						<div>
-							<label class="label" for="number">
-								Number:
-							</label><br>
-							<input id="number" class="input number" type="number" name="number" placeholder="enter number">
-						</div>
-						<div>
-							<label class="label" for="operator">
-								Operators:
-								<small>
-									"from base 10 to base" and "other bases to base 10".
-								</small>
-							</label>
-							<br>
-							<select id="number-base" class="input number">
-								<option id="option2">
-									select operator
-								</option>
-								<option value="base10">
-									from base 10 to base
-								</option>
-								<option value="baseX">
-									other bases to base 10
-								</option>
-							</select>
-						</div>
-						<div>
-							<label class="label" for="base-number">
-								base number:
-							</label>
-							<br>
-							<input id="base-number" class="input number" type="number" name="base-base" placeholder="enter base number">
-						</div>
-						<div>
-							<label class="label" for="result-base">
-								Result:
-							</label>
-							<br>
-							<input id="result-base" class="input number" type="text" name="result-base" placeholder="result">
-						</div>
-						<div>
-							<button id="submit-base" class="input submit">answer</button>
-							<button id="reset-base" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Triangle-Calc-wrap">
-					<!-- Calculator for Triangles -->
-					<fieldset class="fieldset triangle fcleft">
-						<legend id="triangle" class="legend">
-							Triangle
-						</legend>
-						<div>
-							<label class="label" for="tri-base">
-								Base-( b ):
-							</label><br>
-							<input id="tri-base" class="input number" type="number" name="tri-base" placeholder="base">
-						</div>
-						<div>
-							<label class="label" for="tri-height">
-								Height-( h ):
-							</label>
-							<br>
-							<input id="tri-height" class="input number" type="number" name="tri-height" placeholder="height">
-						</div>
-						<div>
-							<label class="label" for="tri-area">
-								Area-( A ) =
-								<small>
-									( <small>1/2</small> ( b x h ))
-								</small>
-							</label>
-							<br>
-							<input id="tri-area" class="input number" type="number" name="tri-area" placeholder="area">
-						</div>
-						<div>
-							<label class="label" for="tri-per">
-								Perimeter-( P ) =
-								<small>
-									( base + 2( slant heights ))
-								</small>
-							</label>
-							<br>
-							<input id="tri-perimeter" class="input number" type="number" name="tri-per" placeholder="if triangle is isosceles only">
-						</div>
-						<div>
-							<button id="submit-tri" class="input submit">answer</button>
-							<button id="reset-tri" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Rectangle-Calc-wrap">
-					<!-- Calculator for Rectangles -->
-					<fieldset class="fieldset rectangle fcright">
-						<legend id="rectangle" class="legend">
-							Rectangle/Square
-						</legend>
-						<div>
-							<label class="label" for="rect-length">
-								Length-( l ):
-							</label><br>
-							<input id="rect-length" class="input number" type="number" name="rect-length" placeholder="length">
-						</div>
-						<div>
-							<label class="label" for="rect-breadth">
-								Breadth-( b ):
-							</label>
-							<br>
-							<input id="rect-breadth" class="input number" type="number" name="rect-breadth" placeholder="breadth">
-						</div>
-						<div>
-							<label class="label" for="rect-area">
-								Area-( A ) =
-								<small>
-									( l x b )
-								</small>
-							</label>
-							<br>
-							<input id="rect-area" class="input number" type="number" name="rect-area" placeholder="area">
-						</div>
-						<div>
-							<label class="label" for="rect-per">
-								Perimeter-( P ) =
-								<small>
-									( 2( l ) + 2( b ) )
-								</small>
-							</label>
-							<br>
-							<input id="rect-perimeter" class="input number" type="number" name="rect-per" placeholder="perimeter">
-						</div>
-						<div>
-							<button id="submit-rect" class="input submit">answer</button>
-							<button id="reset-rect" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="converter-calc-wrap">
-					<!-- Basic calculator -->
-					<fieldset class="fieldset converter fcleft">
-						<legend id="converter" class="legend">
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#converter">
 							Converter
-						</legend>
-						<div>
-							<label class="label" for="num1">
-								Number:
-							</label><br>
-							<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
-						</div>
-						<div>
-							<label class="label" for="operator">
-								Conversion:
-								<small>
-									rad-deg, g-kg
-								</small>
-							</label>
-							<br>
-							<select id="sign" class="input number">
-								<option id="option1">
-									select operator
-								</option>
-								<option value="+">
-									+
-								</option>
-								<option value="-">
-									-
-								</option>
-								<option value="*">
-									*
-								</option>
-								<option value="/">
-									/
-								</option>
-							</select>
-						</div>
-						<div>
-							<label class="label" for="num2">
-								Second Number: power-index, log-base(<small>2 or 10</small>).
-							</label>
-							<br>
-							<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
-						</div>
-						<div>
-							<button id="submit-bas" class="input submit">answer</button>
-							<button id="reset-bas" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Parallelogram-Calc-wrap">
-					<!-- Calculator for Parallelograms -->
-					<fieldset class="fieldset parallelogram fcright">
-						<legend id="parallelogram" class="legend">
-							Parallelogram
-						</legend>
-						<div>
-							<label class="label" for="par-base">
-								Base-( b ):
-							</label><br>
-							<input id="par-base" class="input number" type="number" name="par-base" placeholder="base">
-						</div>
-						<div>
-							<label class="label" for="par-height">
-								Height-( h ):
-							</label>
-							<br>
-							<input id="par-height" class="input number" type="number" name="par-height" placeholder="height">
-						</div>
-						<div>
-							<label class="label" for="par-area">
-								Area-( A ) =
-								<small>
-									( b x h )
-								</small>
-							</label>
-							<br>
-							<input id="par-area" class="input number" type="number" name="par-area" placeholder="area">
-						</div>
-						<div>
-							<button id="submit-par" class="input submit">answer</button>
-							<button id="reset-par" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Circle-Calc-wrap">
-					<!-- Calculator for Circles -->
-					<fieldset class="fieldset circle fcleft">
-						<legend id="circle" class="legend">
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#circle">
 							Circle
-						</legend>
-						<div>
-							<label class="label" for="cir-pi">
-								PI:
-							</label><br>
-							<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
-						</div>
-						<div>
-							<label class="label" for="cir-radius">
-								Radius-( r ):
-							</label>
-							<br>
-							<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
-						</div>
-						<div>
-							<label class="label" for="cir-area">
-								Area-( A ) =
-								<small>
-									( PI x r<sup>2</sup> )
-								</small>
-							</label>
-							<br>
-							<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
-						</div>
-						<div>
-							<label class="label" for="cir-angle">
-								Angle-( X<sup> o</sup> ) =
-								<small>
-									(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
-								</small>
-							</label>
-							<br>
-							<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
-						</div>
-						<div>
-							<label class="label" for="cir-sector">
-								Sector Area-( SA ) =
-								<small>
-									(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
-								</small>
-							</label>
-							<br>
-							<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
-						</div>
-						<div>
-							<label class="label" for="cir-circumference">
-								Circumference/Perimeter-( C/P ) =
-								<small>
-									( 2 x PI x r )
-								</small>
-							</label>
-							<br>
-							<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
-						</div>
-						<div>
-							<button id="submit-cir" class="input submit">answer</button>
-							<button id="reset-cir" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Cylinder-Calc-wrap">
-					<!-- Calculator for Cylinders -->
-					<fieldset class="fieldset cylinder fcright">
-						<legend id="cylinder" class="legend">
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#triangle">
+							Triangle
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#rectangle">
+							Rectangle
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#rectangle">
+							Square
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#parallelogram">
+							Parallelogram
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#cylinder">
 							Cylinder
-						</legend>
-						<div>
-							<label class="label" for="cyl-PI">
-								PI:
-							</label>
-							<br>
-							<input id="cyl-pi" class="input number" type="number" name="cyl-PI" value="3.142857142857143" readonly>
-						</div>
-						<div>
-							<label class="label" for="cyl-radius">
-								Radius-( r ):
-							</label><br>
-							<input id="cyl-radius" class="input number" type="number" name="cyl-radius" placeholder="radius">
-						</div>
-						<div>
-							<label class="label" for="cyl-height">
-								Height-( h ):
-							</label>
-							<br>
-							<input id="cyl-height" class="input number" type="number" name="cyl-height" placeholder="height">
-						</div>
-						<div>
-							<label class="label" for="cyl-circumference">
-								Circumference-( C ) =
-								<small>
-									( 2 x PI x r )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-circumference" class="input number" type="number" name="cyl-csa" placeholder="circumference">
-						</div>
-						<div>
-							<label class="label" for="cyl-cba">
-								Circular Base Area-( CBA ) =
-								<small>
-									( PI x r<sup>2</sup> )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-cba" class="input number" type="number" name="cyl-cba" placeholder="circular base area">
-						</div>
-						<div>
-							<label class="label" for="cyl-csa">
-								Curved Surface Area-( CSA ) =
-								<small>
-									( 2 x PI x r x h )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-csa" class="input number" type="number" name="cyl-csa" placeholder="curved surface area">
-						</div>
-						<div>
-							<label class="label" for="cyl-tsa">
-								Total Surface Area-( TSA ) =
-								<small>
-									( 2 x PI x r( r + h ))
-								</small>
-							</label>
-							<br>
-							<input id="cyl-tsa" class="input number" type="number" name="cyl-tsa" placeholder="total surface area">
-						</div>
-						<div>
-							<label class="label" for="cyl-vol">
-								Volume-( V ) =
-								<small>
-									( PI x r<sup>2</sup> x h )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-vol" class="input number" type="number" name="cyl-vol" placeholder="volume">
-						</div>
-						<div>
-							<button id="submit-cyl" class="input submit">answer</button>
-							<button id="reset-cyl" class="input submit">reset</button>
-						</div>
-					</fieldset>
-				</div>
-				<div id="Trapezium-Calc-wrap">
-					<!-- Calculator for Trapeziums -->
-					<fieldset class="fieldset trapezium fcleft">
-						<legend id="trapezium" class="legend">
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#trapezium">
 							Trapezium
-						</legend>
-						<div>
-							<label class="label" for="trap-a">
-								Top-( a ):
-							</label><br>
-							<input id="trap-a" class="input number" type="number" name="trap-a" placeholder="a">
-						</div>
-						<div>
-							<label class="label" for="trap-b">
-								Bottom-( b ):
-							</label>
-							<br>
-							<input id="trap-b" class="input number" type="number" name="trap-b" placeholder="b">
-						</div>
-						<div>
-							<label class="label" for="trap-height">
-								Height-( h ):
-							</label>
-							<br>
-							<input id="trap-height" class="input number" type="number" name="trap-height" placeholder="height">
-						</div>
-						<div>
-							<label class="label" for="trap-area">
-								Area-( A ) =
-								<small>
-									(<small> 1/2 </small>( a + b ) h )
-								</small>
-							</label>
-							<br>
-							<input id="trap-area" class="input number" type="number" name="trap-area" placeholder="area">
-						</div>
-						<div>
-							<button id="submit-trap" class="input submit">answer</button>
-							<button id="reset-trap" class="input submit">reset</button>
-						</div>
-					</fieldset>
+						</a>
+					</div>
+					<div class = "p-2 my-flex-item">
+						<a class="calc links" href="#num-base">
+							Number Bases
+						</a>
+					</div>
 				</div>
-			</div>
-			<div id="About-wrap">
-				<table id="about-table" width="100%" style="border-collapse: collapse; font-family: helvetica; margin: 20px;">
-					<tr>
-						<th id="About-head" colspan="3">
-							Al-Aleem Academy Mathematics Club
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<article class="article">
-								<img class="about-img" src="Adewale.jpg">
-								<h2 class="article-head" title="instructor">
-									Mr. (Dev.) Abdulsamad Adewale
-								</h2>
-							</article>
-						</td>
-						<td>
-							<article class="article">
-								<h2 class="article-head" title="maths club team">
-									Objectives, Goals and Aims.
-								</h2>
-								<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								</p>
-							</article>
-						</td>
-						<td>
-							<article class="article">
-								<img class="about-img" src="ss3ac.jpg">
-								<h2 class="article-head" title="JS">
-									Maths Club Team
-								</h2>
-								<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								</p>
-							</article>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div id="contact-wrap">
-				<fieldset class="fieldset contact">
-					<legend id="table-contact" class="legend">CONTACT
-					</legend>
-					<table id="contact-table" border="0">
-						<caption class="legend">
-							Contact me through the media below
-							<hr>
-						</caption>
-						<tr class="table row">
-							<td>
-								Full Name:
-								<hr>
-							</td>
-							<td>
-								Abdulsamad Adewale Abdulrasheed
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								Email:
-							</td>
-							<td>
-								abdulrasheedabdulsamad1@gmail.com
-								<br>
-								hardaywharlexy@gmail.com
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								Phone Number:
-								<hr>
-							</td>
-							<td>
-								+234 (0) 7068022402 , +234 (0) 8157354220
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								facebook:
-								<hr>
-							</td>
-							<td>
-								Abdulsamad Adewale
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								Country:
-								<hr>
-							</td>
-							<td>
-								Nigeria
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								State:
-								<hr>
-							</td>
-							<td>
-								Kwara State(Residence: Kaduna State)
-								<hr>
-							</td>
-						</tr>
-						<tr class="table row">
-							<td>
-								Address:
-							</td>
-							<td>
-								<small>p</small>32 Fadan Ayu Street Kakuri Kaduna South.
-							</td>
-						</tr>
-					</table>
-				</fieldset>
-			</div>
-			<div id="footer-wrap">
-				<!-- footer note -->
-				<footer id="footer">
-					<p>
-						&copy Copyright.
-					</p>
-					<p>
-						Al-Aleem College mathematics club is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
-						We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
-						We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
-					</p>
-				</footer>
 			</div>
 		</div>
+		<div>
+			<div class="row">
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="basic-calc-wrap">
+					<h3 id="basic" class="head">
+						Calculator
+					</h3>
+					<div>
+						<label class="label" for="num1">
+							First Number:
+						</label><br>
+						<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
+					</div>
+					<div>
+						<label class="label" for="operator">
+							Operators:
+							<small>
+								+ , - , * , / , modulus , power , square root , cube root , random number.
+							</small>
+						</label>
+						<br>
+						<select id="sign" class="input number">
+							<option id="option1">
+								select operator
+							</option>
+							<option value="+">
+								+
+							</option>
+							<option value="-">
+								-
+							</option>
+							<option value="*">
+								*
+							</option>
+							<option value="/">
+								/
+							</option>
+							<option value="modulus">
+								modulus
+							</option>
+							<option value="power">
+								power
+							</option>
+							<option value="square root">
+								square root
+							</option>
+							<option value="cube root">
+								cube root
+							</option>
+							<option value="logarithm">
+								logarithm
+							</option>
+							<option value="random number">
+								random number
+							</option>
+						</select>
+					</div>
+					<div>
+						<label class="label" for="num2">
+							Second Number: <small>power-index, log-base(<small>2 or 10</small>).</small>
+						</label>
+						<br>
+						<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
+					</div>
+					<div>
+						<label class="label" for="result">
+							Result:
+						</label>
+						<br>
+						<input id="result-bas" class="input number" type="text" name="result" placeholder="result">
+					</div>
+					<div>
+						<button id="submit-bas" class="input submit">answer</button>
+						<button id="reset-bas" class="input submit">reset</button>
+					</div>
+				</div>
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Number-Base-calc-wrap">
+					<h3 id="num-base" class="head">
+						Number Bases
+					</h3>
+					<div>
+						<label class="label" for="number">
+							Number:
+						</label><br>
+						<input id="number" class="input number" type="number" name="number" placeholder="enter number">
+					</div>
+					<div>
+						<label class="label" for="operator">
+							Operators:
+							<small>
+								"from base 10 to base" and "other bases to base 10".
+							</small>
+						</label>
+						<br>
+						<select id="number-base" class="input number">
+							<option id="option2">
+								select operator
+							</option>
+							<option value="base10">
+								from base 10 to base
+							</option>
+							<option value="baseX">
+								other bases to base 10
+							</option>
+						</select>
+					</div>
+					<div>
+						<label class="label" for="base-number">
+							base number:
+						</label>
+						<br>
+						<input id="base-number" class="input number" type="number" name="base-base" placeholder="enter base number">
+					</div>
+					<div>
+						<label class="label" for="result-base">
+							Result:
+						</label>
+						<br>
+						<input id="result-base" class="input number" type="text" name="result-base" placeholder="result">
+					</div>
+					<div>
+						<button id="submit-base" class="input submit">answer</button>
+						<button id="reset-base" class="input submit">reset</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Triangle-Calc-wrap">
+					<h3 id="triangle" class="head">
+						Triangle
+					</h3>
+					<div>
+						<label class="label" for="tri-base">
+							Base-( b ):
+						</label><br>
+						<input id="tri-base" class="input number" type="number" name="tri-base" placeholder="base">
+					</div>
+					<div>
+						<label class="label" for="tri-height">
+							Height-( h ):
+						</label>
+						<br>
+						<input id="tri-height" class="input number" type="number" name="tri-height" placeholder="height">
+					</div>
+					<div>
+						<label class="label" for="tri-area">
+							Area-( A ) =
+							<small>
+								( <small>1/2</small> ( b x h ))
+							</small>
+						</label>
+						<br>
+						<input id="tri-area" class="input number" type="number" name="tri-area" placeholder="area">
+					</div>
+					<div>
+						<label class="label" for="tri-per">
+							Perimeter-( P ) =
+							<small>
+								( base + 2( slant heights ))
+							</small>
+						</label>
+						<br>
+						<input id="tri-perimeter" class="input number" type="number" name="tri-per" placeholder="if triangle is isosceles only">
+					</div>
+					<div>
+						<button id="submit-tri" class="input submit">answer</button>
+						<button id="reset-tri" class="input submit">reset</button>
+					</div>
+				</div>
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Rectangle-Calc-wrap">
+					<h3 id="rectangle" class="head">
+						Rectangle/Square
+					</h3>
+					<div>
+						<label class="label" for="rect-length">
+							Length-( l ):
+						</label><br>
+						<input id="rect-length" class="input number" type="number" name="rect-length" placeholder="length">
+					</div>
+					<div>
+						<label class="label" for="rect-breadth">
+							Breadth-( b ):
+						</label>
+						<br>
+						<input id="rect-breadth" class="input number" type="number" name="rect-breadth" placeholder="breadth">
+					</div>
+					<div>
+						<label class="label" for="rect-area">
+							Area-( A ) =
+							<small>
+								( l x b )
+							</small>
+						</label>
+						<br>
+						<input id="rect-area" class="input number" type="number" name="rect-area" placeholder="area">
+					</div>
+					<div>
+						<label class="label" for="rect-per">
+							Perimeter-( P ) =
+							<small>
+								( 2( l ) + 2( b ) )
+							</small>
+						</label>
+						<br>
+						<input id="rect-perimeter" class="input number" type="number" name="rect-per" placeholder="perimeter">
+					</div>
+					<div>
+						<button id="submit-rect" class="input submit">answer</button>
+						<button id="reset-rect" class="input submit">reset</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Parallelogram-Calc-wrap">
+					<h3 id="parallelogram" class="head">
+						Parallelogram
+					</h3>
+					<div>
+						<label class="label" for="par-base">
+							Base-( b ):
+						</label><br>
+						<input id="par-base" class="input number" type="number" name="par-base" placeholder="base">
+					</div>
+					<div>
+						<label class="label" for="par-height">
+							Height-( h ):
+						</label>
+						<br>
+						<input id="par-height" class="input number" type="number" name="par-height" placeholder="height">
+					</div>
+					<div>
+						<label class="label" for="par-area">
+							Area-( A ) =
+							<small>
+								( b x h )
+							</small>
+						</label>
+						<br>
+						<input id="par-area" class="input number" type="number" name="par-area" placeholder="area">
+					</div>
+					<div>
+						<button id="submit-par" class="input submit">answer</button>
+						<button id="reset-par" class="input submit">reset</button>
+					</div>
+				</div>
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Cylinder-Calc-wrap">
+					<h3 id="cylinder" class="head">
+						Cylinder
+					</h3>
+					<div>
+						<label class="label" for="cyl-PI">
+							PI:
+						</label>
+						<br>
+						<input id="cyl-pi" class="input number" type="number" name="cyl-PI" value="3.142857142857143" readonly>
+					</div>
+					<div>
+						<label class="label" for="cyl-radius">
+							Radius-( r ):
+						</label><br>
+						<input id="cyl-radius" class="input number" type="number" name="cyl-radius" placeholder="radius">
+					</div>
+					<div>
+						<label class="label" for="cyl-height">
+							Height-( h ):
+						</label>
+						<br>
+						<input id="cyl-height" class="input number" type="number" name="cyl-height" placeholder="height">
+					</div>
+					<div>
+						<label class="label" for="cyl-circumference">
+							Circumference-( C ) =
+							<small>
+								( 2 x PI x r )
+							</small>
+						</label>
+						<br>
+						<input id="cyl-circumference" class="input number" type="number" name="cyl-csa" placeholder="circumference">
+					</div>
+					<div>
+						<label class="label" for="cyl-cba">
+							Circular Base Area-( CBA ) =
+							<small>
+								( PI x r<sup>2</sup> )
+							</small>
+						</label>
+						<br>
+						<input id="cyl-cba" class="input number" type="number" name="cyl-cba" placeholder="circular base area">
+					</div>
+					<div>
+						<label class="label" for="cyl-csa">
+							Curved Surface Area-( CSA ) =
+							<small>
+								( 2 x PI x r x h )
+							</small>
+						</label>
+						<br>
+						<input id="cyl-csa" class="input number" type="number" name="cyl-csa" placeholder="curved surface area">
+					</div>
+					<div>
+						<label class="label" for="cyl-tsa">
+							Total Surface Area-( TSA ) =
+							<small>
+								( 2 x PI x r( r + h ))
+							</small>
+						</label>
+						<br>
+						<input id="cyl-tsa" class="input number" type="number" name="cyl-tsa" placeholder="total surface area">
+					</div>
+					<div>
+						<label class="label" for="cyl-vol">
+							Volume-( V ) =
+							<small>
+								( PI x r<sup>2</sup> x h )
+							</small>
+						</label>
+						<br>
+						<input id="cyl-vol" class="input number" type="number" name="cyl-vol" placeholder="volume">
+					</div>
+					<div>
+						<button id="submit-cyl" class="input submit">answer</button>
+						<button id="reset-cyl" class="input submit">reset</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Trapezium-Calc-wrap">
+					<h3 id="trapezium" class="head">
+						Trapezium
+					</h3>
+					<div>
+						<label class="label" for="trap-a">
+							Top-( a ):
+						</label><br>
+						<input id="trap-a" class="input number" type="number" name="trap-a" placeholder="a">
+					</div>
+					<div>
+						<label class="label" for="trap-b">
+							Bottom-( b ):
+						</label>
+						<br>
+						<input id="trap-b" class="input number" type="number" name="trap-b" placeholder="b">
+					</div>
+					<div>
+						<label class="label" for="trap-height">
+							Height-( h ):
+						</label>
+						<br>
+						<input id="trap-height" class="input number" type="number" name="trap-height" placeholder="height">
+					</div>
+					<div>
+						<label class="label" for="trap-area">
+							Area-( A ) =
+							<small>
+								(<small> 1/2 </small>( a + b ) h )
+							</small>
+						</label>
+						<br>
+						<input id="trap-area" class="input number" type="number" name="trap-area" placeholder="area">
+					</div>
+					<div>
+						<button id="submit-trap" class="input submit">answer</button>
+						<button id="reset-trap" class="input submit">reset</button>
+					</div>
+				</div>
+			</div>
+		<div id="About-wrap">
+			<h3 id="About-head">
+				Al-Aleem Academy Mathematics Club
+			</h3>
+				<article class="article">
+					<h2 class="article-head p-2 my-flex-item" title="maths club team">
+						Objectives, Goals and Aims.
+					</h2>
+					<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</article>
+				<div class="d-flex flex-row flex-wrap flex-container">
+				<article class="article p-2 my-flex-item">
+					<img class="about-dev" src="Adewale.jpg">
+					<h2 class="article-head" title="instructor">
+						Mr. (Dev.) Abdulsamad Adewale
+					</h2>
+				</article>
+				<article class="article">
+					<img class="about-img" src="ss3ac.jpg">
+					<h2 class="article-head" title="JS">
+						Maths Club Team
+					</h2>
+					<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</article>
+			</div>
+		</div>
+		<div id="contact-wrap">
+		</div>
+		<div id="footer-wrap">
+			<footer id="footer">
+				<p>
+					&copy Copyright.
+				</p>
+				<p>
+					Al-Aleem College mathematics club is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
+					We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
+					We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
+				</p>
+			</footer>
+		</div>
+	</div>
 
-		<script type="text/javascript" src="script.js"></script>
-	</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
