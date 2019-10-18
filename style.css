@@ -69,7 +69,8 @@ body {
 }
 .calc {
 	font-size: 100%;
-	color: #f5c1a9;
+	color: #dd438b;
+	background-color: transparent;
 	border: 2px solid;
 	border-radius: 20px;
 	margin-left: 15px;
@@ -77,8 +78,9 @@ body {
 	padding: 0px 10px;
 }
 .calc:hover {
-	color: #dd438b;
+	color: #900748;
 	text-decoration: none;
+	background-color: #f5c1a9;
 }
 .head {
 	color: #900748;
