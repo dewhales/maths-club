@@ -70,79 +70,79 @@ resetBasic.addEventListener("click", resetCalculator);
 
 
 /*Calculate Area of Circle*/
-let submitCircle = document.querySelector("#submit-cir");
-function submitCircleCalculator() {
-	let cirArea = document.querySelector("#cir-area");
-	let cirRadius = document.querySelector("#cir-radius");
-	let cirCircumference = document.querySelector("#cir-circumference");
-	let cirAngle = document.querySelector("#cir-angle");
-	let cirSector = document.querySelector("#cir-sector");
-	let cirPI = document.querySelector("#cir-pi");
-	if(cirSector.value.length > 0 && cirRadius.value.length > 0 && cirPI.value.length > 0) {
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value)));
-	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
-	}else if(cirAngle.value.length > 0 && cirSector.value.length > 0 && cirPI.value.length > 0){
-		if(cirAngle.value >= 7 && cirSector.value.length > 0) {
-			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
-		}else if(cirAngle.value < 7 && cirAngle.value >= 0 && cirSector.value.length > 0) {
-			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value)));
-		}
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirSector.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
-		cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0 && cirPI.value.length > 0) {
-		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirArea.value.length > 0 || cirCircumference.value.length > 0) {
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}
-}
+// let submitCircle = document.querySelector("#submit-cir");
+// function submitCircleCalculator() {
+// 	let cirArea = document.querySelector("#cir-area");
+// 	let cirRadius = document.querySelector("#cir-radius");
+// 	let cirCircumference = document.querySelector("#cir-circumference");
+// 	let cirAngle = document.querySelector("#cir-angle");
+// 	let cirSector = document.querySelector("#cir-sector");
+// 	let cirPI = document.querySelector("#cir-pi");
+// 	if(cirSector.value.length > 0 && cirRadius.value.length > 0 && cirPI.value.length > 0) {
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value)));
+// 	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+// 	}else if(cirAngle.value.length > 0 && cirSector.value.length > 0 && cirPI.value.length > 0){
+// 		if(cirAngle.value >= 7 && cirSector.value.length > 0) {
+// 			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
+// 		}else if(cirAngle.value < 7 && cirAngle.value >= 0 && cirSector.value.length > 0) {
+// 			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value)));
+// 		}
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 	}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+// 		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+// 		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 	}else if(cirSector.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+// 		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
+// 		cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 	}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0 && cirPI.value.length > 0) {
+// 		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
+// 		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 	}else if(cirArea.value.length > 0 || cirCircumference.value.length > 0) {
+// 		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+// 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+// 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+// 	}
+// }
 
-/*Reset Circle Calculator*/
-let resetCircle = document.querySelector("#reset-cir");
-function resetCircleCalculator() {
-	let cirRadius = document.querySelector("#cir-radius");
-	let cirAngle = document.querySelector("#cir-angle");
-	let cirSector = document.querySelector("#cir-sector");
-	let cirArea = document.querySelector("#cir-area");
-	let cirCircumference = document.querySelector("#cir-circumference");
-	cirRadius.value = "";
-	cirArea.value = "";
-	cirSector.value = "";
-	cirAngle.value = "";
-	cirCircumference.value = "";
-}
-
-
+// /*Reset Circle Calculator*/
+// let resetCircle = document.querySelector("#reset-cir");
+// function resetCircleCalculator() {
+// 	let cirRadius = document.querySelector("#cir-radius");
+// 	let cirAngle = document.querySelector("#cir-angle");
+// 	let cirSector = document.querySelector("#cir-sector");
+// 	let cirArea = document.querySelector("#cir-area");
+// 	let cirCircumference = document.querySelector("#cir-circumference");
+// 	cirRadius.value = "";
+// 	cirArea.value = "";
+// 	cirSector.value = "";
+// 	cirAngle.value = "";
+// 	cirCircumference.value = "";
+// }
 
 
-/*Event Listeners for Circle Calculations*/
-submitCircle.addEventListener("click", submitCircleCalculator);
-resetCircle.addEventListener("click", resetCircleCalculator);
+
+
+// /*Event Listeners for Circle Calculations*/
+// submitCircle.addEventListener("click", submitCircleCalculator);
+// resetCircle.addEventListener("click", resetCircleCalculator);
 
 // CIRCLE CALCULATOR FUNCTIONS ENDS HERE---!
 
