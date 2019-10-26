@@ -70,7 +70,9 @@ body {
 }
 .calc {
 	font-size: 100%;
-	color: white;
+	color: #f5c1a9;
+	box-shadow: 1px 1px 3px black, -1px -1px 3px black;
+	text-shadow: 1px 1px 0px #a21155, -1px -1px 0px #a21155;
 	background-color: transparent;
 	border: 2px solid;
 	border-radius: 20px;
@@ -82,6 +84,7 @@ body {
 	color: #900748;
 	text-decoration: none;
 	background-color: #f5c1a9;
+	text-shadow: none;
 }
 .head {
 	color: #900748;
