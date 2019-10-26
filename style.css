@@ -1,5 +1,6 @@
 body {
 	background: #900748;
+	margin: 0;
 }
 .links {
 	text-decoration: none;
@@ -69,7 +70,7 @@ body {
 }
 .calc {
 	font-size: 100%;
-	color: #dd438b;
+	color: white;
 	background-color: transparent;
 	border: 2px solid;
 	border-radius: 20px;

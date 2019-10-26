@@ -346,38 +346,69 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5 col-sm-10 calc-wrap" id="Parallelogram-Calc-wrap">
-					<h3 id="parallelogram" class="head">
-						Parallelogram
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Circle-Calc-wrap">
+					<h3 id="circle" class="head">
+						Circle
 					</h3>
 					<div>
-						<label class="label" for="par-base">
-							Base-( b ):
+						<label class="label" for="cir-pi">
+							PI:
 						</label><br>
-						<input id="par-base" class="input number" type="number" name="par-base" placeholder="base">
+						<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
 					</div>
 					<div>
-						<label class="label" for="par-height">
-							Height-( h ):
+						<label class="label" for="cir-radius">
+							Radius-( r ):
 						</label>
 						<br>
-						<input id="par-height" class="input number" type="number" name="par-height" placeholder="height">
+						<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
 					</div>
 					<div>
-						<label class="label" for="par-area">
+						<label class="label" for="cir-area">
 							Area-( A ) =
 							<small>
-								( b x h )
+								( PI x r<sup>2</sup> )
 							</small>
 						</label>
 						<br>
-						<input id="par-area" class="input number" type="number" name="par-area" placeholder="area">
+						<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
 					</div>
 					<div>
-						<button id="submit-par" class="input submit">answer</button>
-						<button id="reset-par" class="input submit">reset</button>
+						<label class="label" for="cir-angle">
+							Angle-( X<sup> o</sup> ) =
+							<small>
+								(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
+							</small>
+						</label>
+						<br>
+						<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
+					</div>
+					<div>
+						<label class="label" for="cir-sector">
+							Sector Area-( SA ) =
+							<small>
+								(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
+							</small>
+						</label>
+						<br>
+						<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
+					</div>
+					<div>
+						<label class="label" for="cir-circumference">
+							Circumference/Perimeter-( C/P ) =
+							<small>
+								( 2 x PI x r )
+							</small>
+						</label>
+						<br>
+						<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
+					</div>
+					<div>
+						<button id="submit-cir" class="input submit">answer</button>
+						<button id="reset-cir" class="input submit">reset</button>
 					</div>
 				</div>
+
 				<div class="col-lg-5 col-sm-10 calc-wrap" id="Cylinder-Calc-wrap">
 					<h3 id="cylinder" class="head">
 						Cylinder
@@ -498,7 +529,40 @@
 						<button id="reset-trap" class="input submit">reset</button>
 					</div>
 				</div>
+				<div class="col-lg-5 col-sm-10 calc-wrap" id="Parallelogram-Calc-wrap">
+					<h3 id="parallelogram" class="head">
+						Parallelogram
+					</h3>
+					<div>
+						<label class="label" for="par-base">
+							Base-( b ):
+						</label><br>
+						<input id="par-base" class="input number" type="number" name="par-base" placeholder="base">
+					</div>
+					<div>
+						<label class="label" for="par-height">
+							Height-( h ):
+						</label>
+						<br>
+						<input id="par-height" class="input number" type="number" name="par-height" placeholder="height">
+					</div>
+					<div>
+						<label class="label" for="par-area">
+							Area-( A ) =
+							<small>
+								( b x h )
+							</small>
+						</label>
+						<br>
+						<input id="par-area" class="input number" type="number" name="par-area" placeholder="area">
+					</div>
+					<div>
+						<button id="submit-par" class="input submit">answer</button>
+						<button id="reset-par" class="input submit">reset</button>
+					</div>
+				</div>
 			</div>
+		</div>
 		<div id="About-wrap">
 			<h3 id="About-head">
 				Al-Aleem Academy Mathematics Club
