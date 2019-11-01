@@ -3,16 +3,24 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.links {
+.dropdown-menu {
+	background-color: transparent;
+}
+.dropdown-item {
+	background-color: #900748;
+	color: white;
+}
+.nav-span {
 	text-decoration: none;
 	letter-spacing: 3px;
-	font-weight: bolder;
 	text-shadow: 1px 1px 0 black;
-	color: red;
+	color: #900;
+	font-family: sans-serif;
+	font-weight: bodler;
 }
-.links:hover {
+.nav-span:hover {
 	text-decoration: underline;
-	color: #a21155;
+	color: white;
 }
 .about-dev {
 	width: 30%;
@@ -27,7 +35,7 @@ body {
 	font-family: helvetica;
 }
 .school {
-	color: gray;
+	color: #900748;
 	font-style: italic;
 	font-size: 10pt;
 	font-family: helvetica;
@@ -45,7 +53,7 @@ body {
 	font-weight: bolder;
 	text-shadow: 1px 1px 0 black;
 }
-.club {
+.lab {
 	color: gray;
 	letter-spacing: 3px;
 	font-weight: bolder;
@@ -53,9 +61,7 @@ body {
 }
 .project {
 	color: gray;
-	font-family: alison;
 	letter-spacing: 3px;
-	font-weight: bolder;
 	text-shadow: 1px 1px 0 black;
 }
 .multiple {
@@ -69,17 +75,14 @@ body {
 	padding: 30px;
 	margin: 20px;
 }
-.calc {
-	font-size: 100%;
+.btn-outline-warning {
 	color: #f5c1a9;
-	box-shadow: 1px 1px 3px black, -1px -1px 3px black;
-	text-shadow: 1px 1px 0px #a21155, -1px -1px 0px #a21155;
-	background-color: transparent;
-	border: 2px solid;
-	border-radius: 20px;
-	margin-left: 15px;
-	margin-top: 20px;
-	padding: 0px 10px;
+	border-color: #f5c1a9;
+}
+.btn:hover {
+	background-color: #f5c1a9;
+	color: #900748;
+	border-color: #f5c1a9;
 }
 .calc:hover {
 	color: #900748;
@@ -116,12 +119,12 @@ body {
 	border-bottom: 4px solid #dd438b;
 }
 .submit {
-	width: 45%;
+	width: 40%;
 	border: 2px solid white;
 	background-color: #760336;
 	color: white;
 	padding-left: 0;
-	margin: 2% 0;
+	margin: 3% 0;
 }
 .submit:hover {
 	background-color: white;
@@ -180,4 +183,8 @@ body {
 	background-color: black;
 	color: #fff;
 	padding: 1%;
+}
+#up-arrow {
+	width: 5em;
+	float: left;
 }

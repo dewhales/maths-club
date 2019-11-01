@@ -86,7 +86,11 @@ function submitCircleCalculator() {
 	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
 		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
 		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+		if(cirAngle.value >= 7 && cirRadius.value.length > 0) {
+			cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+		}else if(cirAngle.value < 7 && cirAngle.value >= 0) {
+			cirSector.value = parseFloat((parseFloat(cirAngle.value) * parseFloat(RAD)) / parseFloat(360)) * parseFloat(cirArea.value);
+		}
 	}else if(cirAngle.value.length > 0 && cirSector.value.length > 0 && cirPI.value.length > 0){
 		if(cirAngle.value >= 7 && cirSector.value.length > 0) {
 			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
