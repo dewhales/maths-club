@@ -25,7 +25,7 @@ body {
 .about-dev {
 	width: 30%;
 }
-.header, .about-img {
+.header {
 	width: 100%;
 }
 .nav {
@@ -137,15 +137,6 @@ body {
 	box-shadow: 0px 0px 10px #900748;
 	margin: 2% 4%;
 }
-#contact-table {
-	width: 100%;
-	border-spacing: 5%;
-	border-collapse: collapse;
-	padding: 2%;
-	font-size: 100%;
-	color: #f5c1a9;
-	text-shadow: 1px 0 0 #f5c1a9;
-}
 #About-head {
 	font-size: 200%;
 	color: white;
@@ -155,7 +146,7 @@ body {
 	text-align: center;
 }
 .about-img {
-	width: 100%;
+	width: 50%;
 }
 .article {
 	width: 100%;
@@ -166,20 +157,10 @@ body {
 .article-head {
 	color: #f5c1a9;
 }
-#about-table {
-	width: 100%;
-	border-collapse: collapse;
-	font-family: helvetica;
-	margin: 5%;
-	clear: both;
-}
-.table {
-	width: 100%;
 
-}
 #footer-wrap {
 	text-align: center;
-	font-size: 50%;
+	font-size: 60%;
 	background-color: black;
 	color: #fff;
 	padding: 1%;
