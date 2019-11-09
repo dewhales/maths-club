@@ -11,25 +11,20 @@
     </title>
   </head>
   <body>
-  	<div id="header-wrap">
-		<header class="header">
-			<img class="img header" src="img/Banner.jpg" alt="al-aleem banner">
+  	<div class="container-fluid">
+		<header id="banner-container">
+			<img src="img/Banner.jpg" alt="al-aleem banner">
 		</header>
-	</div>
-	<div>
-		<nav class="navbar navbar-expand-lg navbar-light bg-#f5c1a9 nav">
-			<h3 class="head">
-				<span class="maths matics">
+		<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-#f5c1a9">
+			<h3>
+				<span class="matics">
 					Maths
 				</span>
-				<span class="maths lab">
+				<span class="lab">
 					lab
-				</span>
-				<span class="maths project">
-					<sub>project</sub>
 				</span><br>
-				<marquee>
-					<small class="school">
+				<marquee id="motto-container">
+					<small>
 						...Al-Aleem Academy...(Upon God's Strength we Stand)
 					</small>
 				</marquee>
@@ -39,595 +34,798 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link links" href="#"><span class="nav-span">Home</span></a>
+					<li class="nav-item">
+						<a type="button" class="btn btn-outline-warning nav-link" aria-pressed="true" href="index.html" >
+							Home
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link links" href="#"><span class="nav-span">About</span></a>
+						<a type="button" class="btn btn-outline-warning nav-link" aria-pressed="true" href="#" >
+							Manual
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link links" href="#"><span class="nav-span">Contact</span></a>
+						<a type="button" class="btn btn-outline-warning nav-link" aria-pressed="true" href="#" >
+							About
+						</a>
+					</li>
+					<li class="nav-item">
+						<a type="button" class="btn btn-outline-warning nav-link" aria-pressed="true" href="#" >
+							Contact
+						</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle links" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span class="nav-span">Dropdown</span>
+						<a type="button" class="btn btn-outline-warning nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span>Dropdown</span>
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<ul class="navbar-nav nav">
-								<a class="dropdown-item" href="#">login</a>
-								<a class="dropdown-item" href="#">Register</a>
+								<a class="dropdown-item nav-link" href="#">login</a>
+								<a class="dropdown-item nav-link" href="#">Register</a>
 							</ul>
 						</div>
 					</li>
+					<li class="nav-item">
+						<a type="button" class="btn btn-outline-warning nav-link" aria-pressed="true" href="#" >
+							Contact
+						</a>
+					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
-				</form>
 			</div>
 		</nav>
-	</div>
-	<div id="content-wrap" >
-		<div>
-			<div id="calc-navigation-wrap">
-				<h3 class="multiple">
-					Multipurpose Calculator
-				</h3>
-				<div class="d-flex flex-row flex-wrap justify-content-between flex-container">
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#basic">
+		<div id="content-container" >
+			<div>
+				<div id="calc-navigation-container">
+					<h3>
+						Multipurpose Calculator
+					</h3>
+					<div class="d-flex flex-row flex-wrap justify-content-start flex-container">
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#basic-calc-container">
+								Calculator
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#cylinder-calc-container">
+								Cylinder
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#triangle-calc-container">
+								Triangle
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#rectangle-calc-container">
+								Rectangle
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#converter-calc-container">
+								Converter
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#rectangle-calc-container">
+								Square
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#trapezium-calc-container">
+								Trapezium
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#circle-calc-container">
+								Circle
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#interest-calc-container">
+								Interests
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#number-base-calc-container">
+								Number Bases
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#cone-calc-container">
+								Cone
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#parallelogram-calc-container">
+								Parallelogram
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="calculators-container">
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="basic-calc-container">
+						<h3>
 							Calculator
-						</a>
+						</h3>
+						<div class="input-container">
+							<label for="num1">
+								First Number:
+							</label><br>
+							<input id="num1" class="input" type="number" name="number1" placeholder="enter first number">
+						</div>
+						<div class="input-container">
+							<label for="operator">
+								Operators:
+								<small>
+									+ , - , * , / , modulus , power , square root , cube root , random number.
+								</small>
+							</label>
+							<br>
+							<select id="sign" class="input">
+								<option id="sign-option">
+									select operator
+								</option>
+								<option value="+">
+									+
+								</option>
+								<option value="-">
+									-
+								</option>
+								<option value="*">
+									*
+								</option>
+								<option value="/">
+									/
+								</option>
+								<option value="modulus">
+									modulus
+								</option>
+								<option value="power">
+									power
+								</option>
+								<option value="square root">
+									square root
+								</option>
+								<option value="cube root">
+									cube root
+								</option>
+								<option value="logarithm">
+									logarithm
+								</option>
+								<option value="random number">
+									random number
+								</option>
+							</select>
+						</div>
+						<div class="input-container">
+							<label for="num2">
+								Second Number: <small>power-index, log-base(<small>2 or 10</small>).</small>
+							</label>
+							<br>
+							<input id="num2" class="input" type="number" name="num2" placeholder="enter second number">
+						</div>
+						<div class="input-container">
+							<label for="result">
+								Result:
+							</label>
+							<br>
+							<input id="result-bas" class="input" type="text" name="result" placeholder="result">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-bas" class="input submit">answer</button>
+							<button id="reset-bas" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#cylinder">
-							Cylinder
-						</a>
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="converter-calc-container">
+						<h3>
+							converter
+						</h3>
+						<div class="input-container">
+							<label for="quantity1">
+								1st Quantity:
+								<small>rad</small>
+							</label><br>
+							<input id="quantity1" class="input" type="number" name="quantity1" placeholder="quantity">
+						</div>
+						<div class="input-container">
+							<label for="quatities">
+								Quatitties:
+								<small>
+									rad-deg;
+								</small>
+							</label>
+							<br>
+							<select id="quantities" class="input">
+								<option id="quantities-option">
+									select operator
+								</option>
+								<option value="rad-deg">
+									radian - degree
+								</option>
+							</select>
+						</div>
+						<div class="input-container">
+							<label for="quantity2">
+								2nd Quantity:
+								<small>deg</small>
+							</label>
+							<br>
+							<input id="quantity2" class="input" type="number" name="quantity2" placeholder="quantity">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-conv" class="input submit">answer</button>
+							<button id="reset-conv" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#triangle">
+				</div>
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="triangle-calc-container">
+						<h3>
 							Triangle
-						</a>
+						</h3>
+						<div class="input-container">
+							<label for="tri-base">
+								Base-( b ):
+							</label><br>
+							<input id="tri-base" class="input" type="number" name="tri-base" placeholder="base">
+						</div>
+						<div class="input-container">
+							<label for="tri-height">
+								Height-( h ):
+							</label>
+							<br>
+							<input id="tri-height" class="input" type="number" name="tri-height" placeholder="height">
+						</div>
+						<div class="input-container">
+							<label for="tri-area">
+								Area-( A ) =
+								<small>
+									( <small>1/2</small> ( b x h ))
+								</small>
+							</label>
+							<br>
+							<input id="tri-area" class="input" type="number" name="tri-area" placeholder="area">
+						</div>
+						<div class="input-container">
+							<label for="tri-per">
+								Perimeter-( P ) =
+								<small>
+									( base + 2( slant heights ))
+								</small>
+							</label>
+							<br>
+							<input id="tri-perimeter" class="input" type="number" name="tri-per" placeholder="if triangle is isosceles only">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-tri" class="input submit">answer</button>
+							<button id="reset-tri" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#rectangle">
-							Rectangle
-						</a>
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="rectangle-calc-container">
+						<h3>
+							Rectangle/Square
+						</h3>
+						<div class="input-container">
+							<label for="rect-length">
+								Length-( l ):
+							</label><br>
+							<input id="rect-length" class="input" type="number" name="rect-length" placeholder="length">
+						</div>
+						<div class="input-container">
+							<label for="rect-breadth">
+								Breadth-( b ):
+							</label>
+							<br>
+							<input id="rect-breadth" class="input" type="number" name="rect-breadth" placeholder="breadth">
+						</div>
+						<div class="input-container">
+							<label for="rect-area">
+								Area-( A ) =
+								<small>
+									( l x b )
+								</small>
+							</label>
+							<br>
+							<input id="rect-area" class="input" type="number" name="rect-area" placeholder="area">
+						</div>
+						<div class="input-container">
+							<label for="rect-per">
+								Perimeter-( P ) =
+								<small>
+									( 2( l ) + 2( b ) )
+								</small>
+							</label>
+							<br>
+							<input id="rect-perimeter" class="input" type="number" name="rect-per" placeholder="perimeter">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-rect" class="input submit">answer</button>
+							<button id="reset-rect" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#converter">
-							Converter
-						</a>
-					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#rectangle">
-							Square
-						</a>
-					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#trapezium">
-							Trapezium
-						</a>
-					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#circle">
+				</div>
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="circle-calc-container">
+						<h3>
 							Circle
-						</a>
+						</h3>
+						<div class="input-container">
+							<label for="cir-pi">
+								PI:
+							</label><br>
+							<input id="cir-pi" class="input" type="number" name="cir-pi" value="3.142857142857143" readonly>
+						</div>
+						<div class="input-container">
+							<label for="cir-radius">
+								Radius-( r ):
+							</label>
+							<br>
+							<input id="cir-radius" class="input" type="number" name="cir-radius" placeholder="radius">
+						</div>
+						<div class="input-container">
+							<label for="cir-area">
+								Area-( A ) =
+								<small>
+									( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-area" class="input" type="number" name="cir-area	" placeholder="area">
+						</div>
+						<div class="input-container">
+							<label for="cir-angle">
+								Angle-( X<sup> o</sup> ) =
+								<small>
+									(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-angle" class="input" type="number" name="cir-angle	" placeholder="angle">
+						</div>
+						<div class="input-container">
+							<label for="cir-sector">
+								Sector Area-( SA ) =
+								<small>
+									(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cir-sector" class="input" type="number" name="cir-sector	" placeholder="sector">
+						</div>
+						<div class="input-container">
+							<label for="cir-circumference">
+								Circumference/Perimeter-( C/P ) =
+								<small>
+									( 2 x PI x r )
+								</small>
+							</label>
+							<br>
+							<input id="cir-circumference" class="input" type="number" name="cir-circumference" placeholder="circumference">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-cir" class="input submit">answer</button>
+							<button id="reset-cir" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#simple-interest">
-							Interests
-						</a>
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="cylinder-calc-container">
+						<h3>
+							Cylinder
+						</h3>
+						<div class="input-container">
+							<label for="cyl-PI">
+								PI:
+							</label>
+							<br>
+							<input id="cyl-pi" class="input" type="number" name="cyl-PI" value="3.142857142857143" readonly>
+						</div>
+						<div class="input-container">
+							<label for="cyl-radius">
+								Radius-( r ):
+							</label><br>
+							<input id="cyl-radius" class="input" type="number" name="cyl-radius" placeholder="radius">
+						</div>
+						<div class="input-container">
+							<label for="cyl-height">
+								Height-( h ):
+							</label>
+							<br>
+							<input id="cyl-height" class="input" type="number" name="cyl-height" placeholder="height">
+						</div>
+						<div class="input-container">
+							<label for="cyl-circumference">
+								Circular Base/Top Circumference-( C ) =
+								<small>
+									( 2 x PI x r )
+								</small>
+							</label>
+							<br>
+							<input id="cyl-circumference" class="input" type="number" name="cyl-csa" placeholder="circumference">
+						</div>
+						<div class="input-container">
+							<label for="cyl-cba">
+								Circular Base/Top Area-( CBA ) =
+								<small>
+									( PI x r<sup>2</sup> )
+								</small>
+							</label>
+							<br>
+							<input id="cyl-cba" class="input" type="number" name="cyl-cba" placeholder="circular base area">
+						</div>
+						<div class="input-container">
+							<label for="cyl-csa">
+								Curved Surface Area-( CSA ) =
+								<small>
+									( 2 x PI x r x h )
+								</small>
+							</label>
+							<br>
+							<input id="cyl-csa" class="input" type="number" name="cyl-csa" placeholder="curved surface area">
+						</div>
+						<div class="input-container">
+							<label for="cyl-tsa">
+								Total Surface Area-( TSA ) =
+								<small>
+									( 2 x PI x r( r + h ))
+								</small>
+							</label>
+							<br>
+							<input id="cyl-tsa" class="input" type="number" name="cyl-tsa" placeholder="total surface area">
+						</div>
+						<div class="input-container">
+							<label for="cyl-vol">
+								Volume-( V ) =
+								<small>
+									( PI x r<sup>2</sup> x h )
+								</small>
+							</label>
+							<br>
+							<input id="cyl-vol" class="input" type="number" name="cyl-vol" placeholder="volume">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-cyl" class="input submit">answer</button>
+							<button id="reset-cyl" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#num-base">
-							Number Bases
-						</a>
+				</div>
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="trapezium-calc-container">
+						<h3>
+							Trapezium
+						</h3>
+						<div class="input-container">
+							<label for="trap-a">
+								Top-( a ):
+							</label><br>
+							<input id="trap-a" class="input" type="number" name="trap-a" placeholder="a">
+						</div>
+						<div class="input-container">
+							<label for="trap-b">
+								Bottom-( b ):
+							</label>
+							<br>
+							<input id="trap-b" class="input" type="number" name="trap-b" placeholder="b">
+						</div>
+						<div class="input-container">
+							<label for="trap-height">
+								Height-( h ):
+							</label>
+							<br>
+							<input id="trap-height" class="input" type="number" name="trap-height" placeholder="height">
+						</div>
+						<div class="input-container">
+							<label for="trap-area">
+								Area-( A ) =
+								<small>
+									(<small> 1/2 </small>( a + b ) h )
+								</small>
+							</label>
+							<br>
+							<input id="trap-area" class="input" type="number" name="trap-area" placeholder="area">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-trap" class="input submit">answer</button>
+							<button id="reset-trap" class="input submit">reset</button>
+						</div>
 					</div>
-					<div class = "p-2 my-flex-item">
-						<a class="btn btn-outline-warning" href="#parallelogram">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="parallelogram-calc-container">
+						<h3>
 							Parallelogram
+						</h3>
+						<div class="input-container">
+							<label for="par-base">
+								Base-( b ):
+							</label><br>
+							<input id="par-base" class="input" type="number" name="par-base" placeholder="base">
+						</div>
+						<div class="input-container">
+							<label for="par-height">
+								Height-( h ):
+							</label>
+							<br>
+							<input id="par-height" class="input" type="number" name="par-height" placeholder="height">
+						</div>
+						<div class="input-container">
+							<label for="par-area">
+								Area-( A ) =
+								<small>
+									( b x h )
+								</small>
+							</label>
+							<br>
+							<input id="par-area" class="input" type="number" name="par-area" placeholder="area">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-par" class="input submit">answer</button>
+							<button id="reset-par" class="input submit">reset</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="interest-calc-container">
+						<h3>
+							Interests
+						</h3>
+						<div class="input-container">
+							<label for="selector">
+								Simple or Compound Interest:
+							</label><br>
+							<select id="interest" class="input">
+								<option id="interest-option">select operator</option>
+								<option value="simple interest">Simple Interest</option>
+								<option value="compound interest">Compound Interest</option>
+							</select>
+						</div>
+						<div class="input-container">
+							<label for="int-P">
+								Principal-( P ):(<small>100 x I / R x T</small>)
+							</label><br>
+							<input id="int-P" class="input" type="number" name="int-P" placeholder="Principal">
+						</div>
+						<div class="input-container">
+							<label for="int-R">
+								Rate-( R ):(<small>100 x I / P x T</small>)
+							</label>
+							<br>
+							<input id="int-R" class="input" type="number" name="int-R" placeholder="Rate">
+						</div>
+						<div class="input-container">
+							<label for="int-T">
+								Time-( T ): (<small>100 x I / P x R</small>)
+							</label>
+							<br>
+							<input id="int-T" class="input" type="number" name="int-T" placeholder="Time">
+						</div>
+						<div class="input-container">
+							<label for="int-I">
+								Simple/Compound Interest-( SI / CI ) =
+								<small>
+									(<small> P x R x T </small>) / ( 100 ):
+								</small>
+							</label>
+							<br>
+							<input id="int-I" class="input" type="number" name="int-I" placeholder="Interest">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-int" class="input submit">answer</button>
+							<button id="reset-int" class="input submit">reset</button>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="number-base-calc-container">
+						<h3>
+							Number Bases
+						</h3>
+						<div class="input-container">
+							<label for="number">
+								Number:
+							</label><br>
+							<input id="number" class="input" type="number" name="number" placeholder="enter number">
+						</div>
+						<div class="input-container">
+							<label for="operator">
+								Operators:
+								<small>
+									"from base 10 to base" and "other bases to base 10".
+								</small>
+							</label>
+							<br>
+							<select id="number-base" class="input">
+								<option id="number-base-option">
+									select operator
+								</option>
+								<option value="base10">
+									from base 10 to base
+								</option>
+								<option value="baseX">
+									other bases to base 10
+								</option>
+								<option value="+">+</option>
+								<option value="-">-</option>
+								<option value="*">*</option>
+								<option value="/">/</option>
+								<option value="power">power</option>
+							</select>
+						</div>
+						<div class="input-container">
+							<label for="base-number">
+								base number:
+							</label>
+							<br>
+							<input id="base-number" class="input" type="number" name="base-number" placeholder="enter base number">
+						</div>
+						<div class="input-container">
+							<label for="basic-calc-base">
+								base for calculating +, -, *, /...:
+							</label>
+							<br>
+							<input id="basic-calc-base" class="input" type="number" name="basic-calc-base" placeholder="enter operator base">
+						</div>
+						<div class="input-container">
+							<label for="result-base">
+								Result:
+							</label>
+							<br>
+							<input id="result-base" class="input" type="text" name="result-base" placeholder="result">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-base" class="input submit">answer</button>
+							<button id="reset-base" class="input submit">reset</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="cone-calc-container">
+							<h3>
+								Cone
+							</h3>
+							<div class="input-container">
+								<label for="cone-PI">
+									PI:
+								</label>
+								<br>
+								<input id="cone-pi" class="input" type="number" name="cone-PI" value="3.142857142857143" readonly>
+							</div>
+							<div class="input-container">
+								<label for="cone-radius">
+									Radius-( r ):
+								</label><br>
+								<input id="cone-radius" class="input" type="number" name="cone-radius" placeholder="radius">
+							</div>
+							<div class="input-container">
+								<label for="cone-height">
+									Slant-Height-( l ):
+								</label>
+								<br>
+								<input id="cone-height" class="input" type="number" name="cone-height" placeholder="height">
+							</div>
+							<div class="input-container">
+								<label for="cone-circumference">
+									Circular Base Circumference-( C ) =
+									<small>
+										( 2 x PI x r )
+									</small>
+								</label>
+								<br>
+								<input id="cone-circumference" class="input" type="number" name="cone-csa" placeholder="circumference">
+							</div>
+							<div class="input-container">
+								<label for="cone-cba">
+									Circular Base Area-( CBA ) =
+									<small>
+										( PI x r<sup>2</sup> )
+									</small>
+								</label>
+								<br>
+								<input id="cone-cba" class="input" type="number" name="cone-cba" placeholder="circular base area">
+							</div>
+							<div class="input-container">
+								<label for="cone-csa">
+									Curved Surface Area-( CSA ) =
+									<small>
+										( 2 x PI x r x h )
+									</small>
+								</label>
+								<br>
+								<input id="cone-csa" class="input" type="number" name="cone-csa" placeholder="curved surface area">
+							</div>
+							<div class="input-container">
+								<label for="cone-tsa">
+									Total Surface Area-( TSA ) =
+									<small>
+										( 2 x PI x r( r + h ))
+									</small>
+								</label>
+								<br>
+								<input id="cone-tsa" class="input" type="number" name="cone-tsa" placeholder="total surface area">
+							</div>
+							<div class="input-container">
+								<label for="cone-vol">
+									Volume-( V ) =
+									<small>
+										( PI x r<sup>2</sup> x h )
+									</small>
+								</label>
+								<br>
+								<input id="cone-vol" class="input" type="number" name="cone-vol" placeholder="volume">
+							</div>
+							<div class="submit-wrap d-flex justify-content-between">
+								<button id="submit-cone" class="input submit">answer</button>
+								<button id="reset-cone" class="input submit">reset</button>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div id="about-container">
+				<h3>
+					Al-Aleem Academy Mathematics lab
+				</h3>
+					<article class="article">
+						<h2 class="article-head p-2 my-flex-item" title="maths lab team">
+							Objectives, Goals and Aims.
+						</h2>
+						<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</article>
+					<div class="d-flex flex-row flex-wrap flex-container">
+					<article class="article">
+						<img width="150" height="150" src="img/Adewale.png">
+						<h2 title="developer">
+							Mr. (Dev.) Abdulsamad Adewale
+						</h2>
+					</article>
+					<article class="article">
+						<img class="img" src="img/ss3ac.jpg">
+						<h2 class="article-head" title="JS">
+							Maths lab Team
+						</h2>
+						<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</article>
+				</div>
+			</div>
+			<div id="contact-container">
+			</div>
+			<div id="footer-container">
+				<footer id="footer">
+					<p>
+						&copy Copyright.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									Al-Aleem College mathematics lab is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
+									We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
+									We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
+								</td>
+								<td>
+									Al-Aleem College mathematics lab is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
+									We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
+									We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div id="up-arrow-container">
+						<a class="fixed-bottom" title="go to top" href="#calc-navigation-container">
+							<img src="img/arrow-up1.png" alt="arrow up button">
 						</a>
 					</div>
-				</div>
+				</footer>
 			</div>
-		</div>
-		<div>
-			<div class="row">
-				<div id="basic" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="basic-calc-wrap">
-					<h3 class="head">
-						Calculator
-					</h3>
-					<div>
-						<label class="label" for="num1">
-							First Number:
-						</label><br>
-						<input id="num1" class="input number" type="number" name="number1" placeholder="enter first number">
-					</div>
-					<div>
-						<label class="label" for="operator">
-							Operators:
-							<small>
-								+ , - , * , / , modulus , power , square root , cube root , random number.
-							</small>
-						</label>
-						<br>
-						<select id="sign" class="input number">
-							<option id="option1">
-								select operator
-							</option>
-							<option value="+">
-								+
-							</option>
-							<option value="-">
-								-
-							</option>
-							<option value="*">
-								*
-							</option>
-							<option value="/">
-								/
-							</option>
-							<option value="modulus">
-								modulus
-							</option>
-							<option value="power">
-								power
-							</option>
-							<option value="square root">
-								square root
-							</option>
-							<option value="cube root">
-								cube root
-							</option>
-							<option value="logarithm">
-								logarithm
-							</option>
-							<option value="random number">
-								random number
-							</option>
-						</select>
-					</div>
-					<div>
-						<label class="label" for="num2">
-							Second Number: <small>power-index, log-base(<small>2 or 10</small>).</small>
-						</label>
-						<br>
-						<input id="num2" class="input number" type="number" name="num2" placeholder="enter second number">
-					</div>
-					<div>
-						<label class="label" for="result">
-							Result:
-						</label>
-						<br>
-						<input id="result-bas" class="input number" type="text" name="result" placeholder="result">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-bas" class="input submit">answer</button>
-						<button id="reset-bas" class="input submit">reset</button>
-					</div>
-				</div>
-				<div id="num-base" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Number-Base-calc-wrap">
-					<h3 class="head">
-						Number Bases
-					</h3>
-					<div>
-						<label class="label" for="number">
-							Number:
-						</label><br>
-						<input id="number" class="input number" type="number" name="number" placeholder="enter number">
-					</div>
-					<div>
-						<label class="label" for="operator">
-							Operators:
-							<small>
-								"from base 10 to base" and "other bases to base 10".
-							</small>
-						</label>
-						<br>
-						<select id="number-base" class="input number">
-							<option id="option2">
-								select operator
-							</option>
-							<option value="base10">
-								from base 10 to base
-							</option>
-							<option value="baseX">
-								other bases to base 10
-							</option>
-						</select>
-					</div>
-					<div>
-						<label class="label" for="base-number">
-							base number:
-						</label>
-						<br>
-						<input id="base-number" class="input number" type="number" name="base-base" placeholder="enter base number">
-					</div>
-					<div>
-						<label class="label" for="result-base">
-							Result:
-						</label>
-						<br>
-						<input id="result-base" class="input number" type="text" name="result-base" placeholder="result">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-base" class="input submit">answer</button>
-						<button id="reset-base" class="input submit">reset</button>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div id="triangle" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Triangle-Calc-wrap">
-					<h3 class="head">
-						Triangle
-					</h3>
-					<div>
-						<label class="label" for="tri-base">
-							Base-( b ):
-						</label><br>
-						<input id="tri-base" class="input number" type="number" name="tri-base" placeholder="base">
-					</div>
-					<div>
-						<label class="label" for="tri-height">
-							Height-( h ):
-						</label>
-						<br>
-						<input id="tri-height" class="input number" type="number" name="tri-height" placeholder="height">
-					</div>
-					<div>
-						<label class="label" for="tri-area">
-							Area-( A ) =
-							<small>
-								( <small>1/2</small> ( b x h ))
-							</small>
-						</label>
-						<br>
-						<input id="tri-area" class="input number" type="number" name="tri-area" placeholder="area">
-					</div>
-					<div>
-						<label class="label" for="tri-per">
-							Perimeter-( P ) =
-							<small>
-								( base + 2( slant heights ))
-							</small>
-						</label>
-						<br>
-						<input id="tri-perimeter" class="input number" type="number" name="tri-per" placeholder="if triangle is isosceles only">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-tri" class="input submit">answer</button>
-						<button id="reset-tri" class="input submit">reset</button>
-					</div>
-				</div>
-				<div id="rectangle" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Rectangle-Calc-wrap">
-					<h3 class="head">
-						Rectangle/Square
-					</h3>
-					<div>
-						<label class="label" for="rect-length">
-							Length-( l ):
-						</label><br>
-						<input id="rect-length" class="input number" type="number" name="rect-length" placeholder="length">
-					</div>
-					<div>
-						<label class="label" for="rect-breadth">
-							Breadth-( b ):
-						</label>
-						<br>
-						<input id="rect-breadth" class="input number" type="number" name="rect-breadth" placeholder="breadth">
-					</div>
-					<div>
-						<label class="label" for="rect-area">
-							Area-( A ) =
-							<small>
-								( l x b )
-							</small>
-						</label>
-						<br>
-						<input id="rect-area" class="input number" type="number" name="rect-area" placeholder="area">
-					</div>
-					<div>
-						<label class="label" for="rect-per">
-							Perimeter-( P ) =
-							<small>
-								( 2( l ) + 2( b ) )
-							</small>
-						</label>
-						<br>
-						<input id="rect-perimeter" class="input number" type="number" name="rect-per" placeholder="perimeter">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-rect" class="input submit">answer</button>
-						<button id="reset-rect" class="input submit">reset</button>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div id="circle" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Circle-Calc-wrap">
-					<h3 class="head">
-						Circle
-					</h3>
-					<div>
-						<label class="label" for="cir-pi">
-							PI:
-						</label><br>
-						<input id="cir-pi" class="input number" type="number" name="cir-pi" value="3.142857142857143" readonly>
-					</div>
-					<div>
-						<label class="label" for="cir-radius">
-							Radius-( r ):
-						</label>
-						<br>
-						<input id="cir-radius" class="input number" type="number" name="cir-radius" placeholder="radius">
-					</div>
-					<div>
-						<label class="label" for="cir-area">
-							Area-( A ) =
-							<small>
-								( PI x r<sup>2</sup> )
-							</small>
-						</label>
-						<br>
-						<input id="cir-area" class="input number" type="number" name="cir-area	" placeholder="area">
-					</div>
-					<div>
-						<label class="label" for="cir-angle">
-							Angle-( X<sup> o</sup> ) =
-							<small>
-								(Sector x 360<sup>o</sup>) / ( PI x r<sup>2</sup> )
-							</small>
-						</label>
-						<br>
-						<input id="cir-angle" class="input number" type="number" name="cir-angle	" placeholder="angle">
-					</div>
-					<div>
-						<label class="label" for="cir-sector">
-							Sector Area-( SA ) =
-							<small>
-								(angle / 360<sup>o</sup>) x ( PI x r<sup>2</sup> )
-							</small>
-						</label>
-						<br>
-						<input id="cir-sector" class="input number" type="number" name="cir-sector	" placeholder="sector">
-					</div>
-					<div>
-						<label class="label" for="cir-circumference">
-							Circumference/Perimeter-( C/P ) =
-							<small>
-								( 2 x PI x r )
-							</small>
-						</label>
-						<br>
-						<input id="cir-circumference" class="input number" type="number" name="cir-circumference" placeholder="circumference">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-cir" class="input submit">answer</button>
-						<button id="reset-cir" class="input submit">reset</button>
-					</div>
-				</div>
-
-				<div id="cylinder" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Cylinder-Calc-wrap">
-					<h3 class="head">
-						Cylinder
-					</h3>
-					<div>
-						<label class="label" for="cyl-PI">
-							PI:
-						</label>
-						<br>
-						<input id="cyl-pi" class="input number" type="number" name="cyl-PI" value="3.142857142857143" readonly>
-					</div>
-					<div>
-						<label class="label" for="cyl-radius">
-							Radius-( r ):
-						</label><br>
-						<input id="cyl-radius" class="input number" type="number" name="cyl-radius" placeholder="radius">
-					</div>
-					<div>
-						<label class="label" for="cyl-height">
-							Height-( h ):
-						</label>
-						<br>
-						<input id="cyl-height" class="input number" type="number" name="cyl-height" placeholder="height">
-					</div>
-					<div>
-						<label class="label" for="cyl-circumference">
-							Circumference-( C ) =
-							<small>
-								( 2 x PI x r )
-							</small>
-						</label>
-						<br>
-						<input id="cyl-circumference" class="input number" type="number" name="cyl-csa" placeholder="circumference">
-					</div>
-					<div>
-						<label class="label" for="cyl-cba">
-							Circular Base Area-( CBA ) =
-							<small>
-								( PI x r<sup>2</sup> )
-							</small>
-						</label>
-						<br>
-						<input id="cyl-cba" class="input number" type="number" name="cyl-cba" placeholder="circular base area">
-					</div>
-					<div>
-						<label class="label" for="cyl-csa">
-							Curved Surface Area-( CSA ) =
-							<small>
-								( 2 x PI x r x h )
-							</small>
-						</label>
-						<br>
-						<input id="cyl-csa" class="input number" type="number" name="cyl-csa" placeholder="curved surface area">
-					</div>
-					<div>
-						<label class="label" for="cyl-tsa">
-							Total Surface Area-( TSA ) =
-							<small>
-								( 2 x PI x r( r + h ))
-							</small>
-						</label>
-						<br>
-						<input id="cyl-tsa" class="input number" type="number" name="cyl-tsa" placeholder="total surface area">
-					</div>
-					<div>
-						<label class="label" for="cyl-vol">
-							Volume-( V ) =
-							<small>
-								( PI x r<sup>2</sup> x h )
-							</small>
-						</label>
-						<br>
-						<input id="cyl-vol" class="input number" type="number" name="cyl-vol" placeholder="volume">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-cyl" class="input submit">answer</button>
-						<button id="reset-cyl" class="input submit">reset</button>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div id="trapezium" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Trapezium-Calc-wrap">
-					<h3 class="head">
-						Trapezium
-					</h3>
-					<div>
-						<label class="label" for="trap-a">
-							Top-( a ):
-						</label><br>
-						<input id="trap-a" class="input number" type="number" name="trap-a" placeholder="a">
-					</div>
-					<div>
-						<label class="label" for="trap-b">
-							Bottom-( b ):
-						</label>
-						<br>
-						<input id="trap-b" class="input number" type="number" name="trap-b" placeholder="b">
-					</div>
-					<div>
-						<label class="label" for="trap-height">
-							Height-( h ):
-						</label>
-						<br>
-						<input id="trap-height" class="input number" type="number" name="trap-height" placeholder="height">
-					</div>
-					<div>
-						<label class="label" for="trap-area">
-							Area-( A ) =
-							<small>
-								(<small> 1/2 </small>( a + b ) h )
-							</small>
-						</label>
-						<br>
-						<input id="trap-area" class="input number" type="number" name="trap-area" placeholder="area">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-trap" class="input submit">answer</button>
-						<button id="reset-trap" class="input submit">reset</button>
-					</div>
-				</div>
-				<div id="parallelogram" class="col-lg-5 col-md-5 col-sm-10 calc-wrap" id="Parallelogram-Calc-wrap">
-					<h3 class="head">
-						Parallelogram
-					</h3>
-					<div>
-						<label class="label" for="par-base">
-							Base-( b ):
-						</label><br>
-						<input id="par-base" class="input number" type="number" name="par-base" placeholder="base">
-					</div>
-					<div>
-						<label class="label" for="par-height">
-							Height-( h ):
-						</label>
-						<br>
-						<input id="par-height" class="input number" type="number" name="par-height" placeholder="height">
-					</div>
-					<div>
-						<label class="label" for="par-area">
-							Area-( A ) =
-							<small>
-								( b x h )
-							</small>
-						</label>
-						<br>
-						<input id="par-area" class="input number" type="number" name="par-area" placeholder="area">
-					</div>
-					<div class="submit-wrap d-flex justify-content-between">
-						<button id="submit-par" class="input submit">answer</button>
-						<button id="reset-par" class="input submit">reset</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="About-wrap">
-			<h3 id="About-head">
-				Al-Aleem Academy Mathematics lab
-			</h3>
-				<article class="article">
-					<h2 class="article-head p-2 my-flex-item" title="maths lab team">
-						Objectives, Goals and Aims.
-					</h2>
-					<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</article>
-				<div class="d-flex flex-row flex-wrap flex-container">
-				<article class="article p-2 my-flex-item">
-					<img class="about-dev" src="img/Adewale.jpg">
-					<h2 class="article-head" title="instructor">
-						Mr. (Dev.) Abdulsamad Adewale
-					</h2>
-				</article>
-				<article class="article">
-					<img class="about-img" src="img/ss3ac.jpg">
-					<h2 class="article-head" title="JS">
-						Maths lab Team
-					</h2>
-					<p style="font-size: 10pt; padding-left: 10px; color: lightgray; letter-spacing: 2px; word-spacing: 4px;">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</article>
-			</div>
-		</div>
-		<div id="contact-wrap">
-		</div>
-		<div id="footer-wrap">
-			<footer id="footer">
-				<p>
-					&copy Copyright.
-				</p>
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								Al-Aleem College mathematics lab is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
-								We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
-								We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
-							</td>
-							<td>
-								Al-Aleem College mathematics lab is a learning hub that embraced students of the college from different classes, different departments and different instructors coming together as one for the sole purpose of helping the college achieve its aims, goals and pre-set objectives.
-								We are not gender biased neither are we age discriminating. We bring together unity amongst culture and religion and we are not known for racism.
-								We are Mathematicians, we are Technologists, we are Developers, we are Programmers and of course we are PROBLEM SOLVERS!.
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<a class="fixed-bottom" title="go to top" href="#calc-navigation-wrap">
-					<img id="up-arrow" src="img/arrow-up1.png" alt="arrow up button">
-				</a>
-			</footer>
 		</div>
 	</div>
 

@@ -51,7 +51,7 @@ function resetCalculator() {
 	num1.value = "";
 	num2.value = "";
 	resultBasic.value = "";
-	operator.value = document.querySelector("#option1").value;
+	operator.value = document.querySelector("#sign-option").value;
 }
 
 
@@ -78,51 +78,53 @@ function submitCircleCalculator() {
 	let cirAngle = document.querySelector("#cir-angle");
 	let cirSector = document.querySelector("#cir-sector");
 	let cirPI = document.querySelector("#cir-pi");
-	if(cirSector.value.length > 0 && cirRadius.value.length > 0 && cirPI.value.length > 0) {
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value)));
-	}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		if(cirAngle.value >= 7 && cirRadius.value.length > 0) {
+	if(cirPI.value.length > 0) {
+		if (cirSector.value.length > 0 && cirRadius.value.length > 0) {
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+			cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / (parseFloat(cirArea.value)));
+		}else if(cirRadius.value.length > 0 && cirAngle.value.length > 0 && cirPI.value.length > 0){
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+			if(cirAngle.value >= 7 && cirRadius.value.length > 0) {
+				cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
+			}else if(cirAngle.value < 7 && cirAngle.value >= 0) {
+				cirSector.value = parseFloat((parseFloat(cirAngle.value) * parseFloat(RAD)) / parseFloat(360)) * parseFloat(cirArea.value);
+			}
+		}else if(cirAngle.value.length > 0 && cirSector.value.length > 0){
+			if(cirAngle.value >= 7 && cirSector.value.length > 0) {
+				cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
+			}else if(cirAngle.value < 7 && cirAngle.value >= 0 && cirSector.value.length > 0) {
+				cirRadius.value = Math.round(Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(parseFloat(cirAngle.value)))));
+			}
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		}else if(cirAngle.value.length > 0 && cirArea.value.length > 0) {
 			cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
-		}else if(cirAngle.value < 7 && cirAngle.value >= 0) {
-			cirSector.value = parseFloat((parseFloat(cirAngle.value) * parseFloat(RAD)) / parseFloat(360)) * parseFloat(cirArea.value);
+			cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		}else if(cirSector.value.length > 0 && cirArea.value.length > 0) {
+			cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
+			cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0) {
+			cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+			cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+		}else if(cirAngle.value.length > 0 && cirArea.value.length > 0) {
+			cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
+		}else if(cirArea.value.length > 0 || cirCircumference.value.length > 0) {
+			cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
+			cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
+			cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
 		}
-	}else if(cirAngle.value.length > 0 && cirSector.value.length > 0 && cirPI.value.length > 0){
-		if(cirAngle.value >= 7 && cirSector.value.length > 0) {
-			cirRadius.value = Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(cirAngle.value) / parseFloat(RAD)));
-		}else if(cirAngle.value < 7 && cirAngle.value >= 0 && cirSector.value.length > 0) {
-			cirRadius.value = Math.round(Math.sqrt(parseFloat((2 * parseFloat(cirSector.value))) / (parseFloat(parseFloat(cirAngle.value)))));
-		}
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirRadius.value.length > 0 && cirPI.value.length > 0) {
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirSector.value = parseFloat(parseFloat(cirAngle.value) / parseFloat(360)) * parseFloat(cirArea.value);
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirSector.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
-		cirRadius.value = parseFloat(Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirSector.value.length > 0 && cirCircumference.value.length > 0 && cirPI.value.length > 0) {
-		cirRadius.value = (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-		cirAngle.value = Math.round(parseFloat(parseFloat(cirSector.value) * 360) / parseFloat(cirArea.value));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-	}else if(cirAngle.value.length > 0 && cirArea.value.length > 0 && cirPI.value.length > 0) {
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
-	}else if(cirArea.value.length > 0 || cirCircumference.value.length > 0) {
-		cirRadius.value = (Math.sqrt(parseFloat(cirArea.value) / parseFloat(PI))) || (parseFloat(cirCircumference.value) / (parseFloat(2) * parseFloat(PI)));
-		cirCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(cirRadius.value);
-		cirArea.value = parseFloat(PI) * parseFloat(parseFloat(cirRadius.value) **2);
 	}
 }
 
@@ -448,17 +450,18 @@ function resetCylinderCalculator () {
 submitCylinder.addEventListener("click", submitCylinderCalculator);
 resetCylinder.addEventListener("click", resetCylinderCalculator);
 
-/*CYLINDER cALCULATOR ENDS HERE_-_!!!*/
+/*CYLINDER CALCULATOR ENDS HERE_-_!!!*/
 
 
 
-
+/*Number Base Calculator starts here...*/
 
 function baseCalculator () {
 	let numberBase = document.querySelector("#number");
 	let baseNumber = document.querySelector("#base-number");
 	let operator = document.querySelector("#number-base");
 	let resultBase = document.querySelector("#result-base");
+	let basicCalcBase = document.querySelector("#basic-calc-base");
 	let base = [];
 	/*Converting from Base 10 to other Bases*/
 	function numberBaseFunc (x, y) {
@@ -472,29 +475,56 @@ function baseCalculator () {
 		}
 		return base.reduce((a,b) => a + String(b), "");
 	}
-	if(numberBase.value.length > 0 && baseNumber.value.length > 0 && operator.value == "base10") {
-		resultBase.value = numberBaseFunc(numberBase.value,baseNumber.value);
-	}else if(numberBase.value.length > 0 && baseNumber.value.length > 0 && operator.value == "baseX") {
-		resultBase.value = parseInt(numberBase.value,baseNumber.value);
-	}else if(operator.value == "select operator") {
-		alert("Syntax Error");
-		resultBase.value = "";
-	}else {
+	if(numberBase.value.length > 0 && baseNumber.value.length > 0) {
+		if(operator.value == "base10"){
+			resultBase.value = numberBaseFunc(numberBase.value,baseNumber.value);
+			basicCalcBase.value = "";
+		}else if(operator.value == "baseX"){
+			resultBase.value = parseInt(numberBase.value,baseNumber.value);
+			basicCalcBase.value = "";
+		}else if(operator.value == "select operator") {
+			alert("Syntax Error");
+			resultBase.value = "";
+			basicCalcBase.value = "";
+		}else if(operator.value == "+") {
+			let numBase = parseInt(numberBase.value, basicCalcBase.value);
+			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
+			let finalResult = parseFloat(numBase) + parseFloat(baseNum);
+			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
+		}else if(operator.value == "-") {
+			let numBase = parseInt(numberBase.value, basicCalcBase.value);
+			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
+			let finalResult = parseFloat(numBase) - parseFloat(baseNum);
+			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
+		}else if(operator.value == "*") {
+			let numBase = parseInt(numberBase.value, basicCalcBase.value);
+			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
+			let finalResult = parseFloat(numBase) * parseFloat(baseNum);
+			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
+		}else if(operator.value == "/") {
+			let numBase = parseInt(numberBase.value, basicCalcBase.value);
+			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
+			let finalResult = parseFloat(numBase) / parseFloat(baseNum);
+			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
+		}
+	}else{
 		alert("Math Error!");
 		resultBase.value = "";
 	}
 }
 
-// Reset button for basic calculator
+// Reset button for number base calculator
 function resetBaseCalculator() {
 	let numberBase = document.querySelector("#number");
 	let baseNumber = document.querySelector("#base-number");
 	let operator = document.querySelector("#number-base");
 	let resultBase = document.querySelector("#result-base");
+	let basicCalcBase = document.querySelector("#basic-calc-base");
 	baseNumber.value = "";
 	numberBase.value = "";
+	basicCalcBase.value = "";
 	resultBase.value = "";
-	operator.value = document.querySelector("#option2").value;
+	operator.value = document.querySelector("#number-base-option").value;
 }
 
 let submitBase = document.querySelector("#submit-base");
@@ -502,3 +532,112 @@ let resetBase = document.querySelector("#reset-base");
 /*Event Listeners for Basic Calculator*/
 submitBase.addEventListener("click", baseCalculator);
 resetBase.addEventListener("click", resetBaseCalculator);
+
+/*Number Base Calculator Ends Here ...*/
+
+
+
+/*Simple and Compound Interest Calculator starts here...*/
+
+let submitInterest = document.querySelector("#submit-int");
+// Function for compound interest starts here
+function compoundInterestFunction(principal, rate, time) {
+	let compoundInterest = principal;
+	function numberOfYears() {
+		let years = [];
+		for(let i = 1; i <= time; i++) {
+			years.push(i);
+		}
+		newYears=years.map(array => array = 1);
+		newYears.forEach(year => {
+			function interest() {
+			compoundInterest += (compoundInterest * rate * year)/100;
+			}
+			interest()
+		})
+	}
+	numberOfYears();
+	compoundInterest -= principal;
+	return compoundInterest;
+}
+// Function for compound interest ends here.
+
+function submitInterestCalculator() {
+	let operator = document.querySelector("#interest");
+	let intP = document.querySelector("#int-P");
+	let intR = document.querySelector("#int-R");
+	let intT = document.querySelector("#int-T");
+	let intI = document.querySelector("#int-I");
+	if(operator.value == "simple interest") {
+		if(intP.value.length > 0 && intR.value.length > 0 && intT.value.length > 0) {
+		intI.value = parseFloat(parseFloat(intP.value) * parseFloat(intR.value) * (parseFloat(intT.value)) / 100);
+		}else if(intP.value.length > 0 && intR.value.length > 0 && intI.value.length > 0) {
+			intT.value = parseFloat((parseFloat(intI.value) * 100) / (parseFloat(intP.value) * parseFloat(intR.value)));
+		}else if(intP.value.length > 0 && intT.value.length > 0 && intI.value.length > 0) {
+			intR.value = parseFloat((parseFloat(intI.value) * 100) / (parseFloat(intP.value) * parseFloat(intT.value)));
+		}else if(intR.value.length > 0 && intT.value.length > 0 && intI.value.length > 0) {
+			intP.value = parseFloat((parseFloat(intI.value) * 100) / (parseFloat(intR.value) * parseFloat(intT.value)));
+		}else {
+			alert("SYNTAX ERROR")
+		}
+	}else if(operator.value == "compound interest") {
+		if(intP.value.length > 0 && intR.value.length > 0 && intT.value.length > 0) {
+			intI.value = compoundInterestFunction(parseFloat(intP.value), parseFloat(intR.value), parseFloat(intT.value));
+		}
+	}else {
+			alert("SYNTAX ERROR")
+	}
+}
+
+// Function to reset Interest Calculator
+let resetInterest = document.querySelector("#reset-int");
+function resetInterestCalculator () {
+	let operator = document.querySelector("#interest");
+	let intP = document.querySelector("#int-P");
+	let intR = document.querySelector("#int-R");
+	let intT = document.querySelector("#int-T");
+	let intI = document.querySelector("#int-I");
+	intP.value = "";
+	intR.value = "";
+	intT.value = "";
+	intI.value = "";
+	operator.value = document.querySelector("#interest-option").value;
+}
+
+// Event Listeners for Interest Calculations
+submitInterest.addEventListener("click", submitInterestCalculator);
+resetInterest.addEventListener("click", resetInterestCalculator);
+
+// Interest CALCULATOR FUNCTIONS ENDS HERE---!
+
+
+
+// Converter Calculator starts here...
+let submitConverter = document.querySelector("#submit-conv");
+function submitConverterCalculator() {
+	let quantities = document.querySelector("#quantities");
+	let quantity1 = document.querySelector("#quantity1");
+	let quantity2 = document.querySelector("#quantity2");
+	if(quantities.value == "rad-deg") {
+		if(quantity2.value.length > 0) {
+			quantity1.value = parseFloat(quantity2.value) / RAD;
+		}else if(quantity1.value.length > 0) {
+			quantity2.value = parseFloat(quantity1.value) * RAD;
+		}
+	}
+}
+
+// Function to reset Interest Calculator
+let resetConverter = document.querySelector("#reset-conv");
+function resetConverterCalculator () {
+	let quantities = document.querySelector("#quantities");
+	let quantity1 = document.querySelector("#quantity1");
+	let quantity2 = document.querySelector("#quantity2");
+	quantity1.value = "";
+	quantity2.value = "";
+	quantities.value = document.querySelector("#quantities-option").value;
+}
+
+// Event Listeners for Converter Calculations
+submitConverter.addEventListener("click", submitConverterCalculator);
+resetConverter.addEventListener("click", resetConverterCalculator);
