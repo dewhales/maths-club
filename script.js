@@ -486,26 +486,28 @@ function baseCalculator () {
 			alert("Syntax Error");
 			resultBase.value = "";
 			basicCalcBase.value = "";
-		}else if(operator.value == "+") {
+		}else if(operator.value == "+" && basicCalcBase.value.length > 0) {
 			let numBase = parseInt(numberBase.value, basicCalcBase.value);
 			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
 			let finalResult = parseFloat(numBase) + parseFloat(baseNum);
 			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
-		}else if(operator.value == "-") {
+		}else if(operator.value == "-" && basicCalcBase.value.length > 0) {
 			let numBase = parseInt(numberBase.value, basicCalcBase.value);
 			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
 			let finalResult = parseFloat(numBase) - parseFloat(baseNum);
 			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
-		}else if(operator.value == "*") {
+		}else if(operator.value == "*" && basicCalcBase.value.length > 0) {
 			let numBase = parseInt(numberBase.value, basicCalcBase.value);
 			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
 			let finalResult = parseFloat(numBase) * parseFloat(baseNum);
 			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
-		}else if(operator.value == "/") {
+		}else if(operator.value == "/" && basicCalcBase.value.length > 0) {
 			let numBase = parseInt(numberBase.value, basicCalcBase.value);
 			let baseNum = parseInt(baseNumber.value, basicCalcBase.value);
 			let finalResult = parseFloat(numBase) / parseFloat(baseNum);
 			resultBase.value = numberBaseFunc(finalResult, basicCalcBase.value);
+		}else {
+			alert("enter base of calculation");
 		}
 	}else{
 		alert("Math Error!");
@@ -660,73 +662,71 @@ function submitConeCalculator() {
 	let coneVolume = document.querySelector("#cone-vol");
 	let conePI = document.querySelector("#cone-pi");
 	let coneHeight = document.querySelector("#cone-height");
-	if(coneRadius.value.length > 0 && coneSlantHeight.value.length > 0 && conePI.value.length > 0) {
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneCba.value = parseFloat(PI) * parseFloat(parseFloat(coneRadius.value) **2);
-		coneCsa.value = parseFloat(PI) * parseFloat(coneRadius.value) * parseFloat(coneSlantHeight.value);
-		coneTsa.value = parseFloat(parseFloat(coneCba.value) + parseFloat(coneCsa.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(coneCba.value) * parseFloat(coneHeight.value));
-	}else if(coneSlantHeight.value.length > 0 && coneCba.value.length > 0 && conePI.value.length > 0) {
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneCsa.value = parseFloat(PI) * parseFloat(coneRadius.value) * parseFloat(coneSlantHeight.value);
-		coneTsa.value = parseFloat(parseFloat(coneCba.value) + parseFloat(coneCsa.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(coneCba.value) * parseFloat(coneHeight.value));
-	}else if (coneVolume.value.length > 0 && coneCba.value.length > 0 && conePI.value.length > 0) {
-		coneSlantHeight.value = parseFloat(coneVolume.value) / parseFloat(coneCba.value);
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneCsa.value = parseFloat(PI) * parseFloat(coneRadius.value) * parseFloat(coneSlantHeight.value);
-		coneTsa.value = parseFloat(parseFloat(coneCba.value) + parseFloat(coneCsa.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-	}else if(coneSlantHeight.value.length > 0 && coneCircumference.value.length > 0 && conePI.value.length > 0) {
-		coneRadius.value = parseFloat(coneCircumference.value) / (parseFloat(2) * parseFloat(PI));
-		coneCba.value = parseFloat(PI) * parseFloat(parseFloat(coneRadius.value) **2);
-		coneCsa.value = parseFloat(PI) * parseFloat(coneRadius.value) * parseFloat(coneSlantHeight.value);
-		coneTsa.value = parseFloat(parseFloat(coneCba.value) + parseFloat(coneCsa.value));
-		coneVolume.value = parseFloat((1/3) * parseFloat(PI) * (parseFloat(coneRadius.value) **2) * parseFloat(coneHeight.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-	}else if(coneCba.value.length > 0 && coneCsa.value.length > 0 && conePI.value.length > 0) {
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneTsa.value = parseFloat(parseFloat(parseFloat(coneCba.value) * 2) + parseFloat(coneCsa.value));
-		coneSlantHeight.value = parseFloat(coneCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(PI) * (parseFloat(coneRadius.value) **2) * parseFloat(coneHeight.value));
-	}else if(coneTsa.value.length > 0 && coneCba.value.length > 0 && conePI.value.length > 0) {
-		coneCsa.value = parseFloat(coneTsa.value) - parseFloat(parseFloat(coneCba.value) * 2);
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneSlantHeight.value = parseFloat(coneCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(coneCba.value) * parseFloat(coneHeight.value));
-	}else if(coneTsa.value.length > 0 && coneCsa.value.length > 0 && conePI.value.length > 0) {
-		coneCba.value = parseFloat((parseFloat(coneTsa.value) - parseFloat(coneCsa.value)) / 2);
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneSlantHeight.value = parseFloat(coneCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(coneCba.value) * parseFloat(coneHeight.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-	}else if(coneRadius.value.length > 0 && conePI.value.length > 0) {
-		coneCba.value = parseFloat(conePI.value) * parseFloat(parseFloat(coneRadius.value) **2);
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-	}else if(coneCba.value.length > 0 && conePI.value.length > 0) {
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-	}else if(coneCircumference.value.length > 0 && conePI.value.length > 0) {
-		coneRadius.value = parseFloat(coneCircumference.value) / (parseFloat(2) * parseFloat(PI));
-		coneCba.value = parseFloat(PI) * parseFloat(parseFloat(parseFloat(coneRadius.value) **2));
-	}else if (coneVolume.value.length > 0 && coneSlantHeight.value.length > 0 && conePI.value.length > 0) {
-		coneCba.value = parseFloat(coneVolume.value) / parseFloat(coneSlantHeight.value);
-		coneRadius.value = Math.sqrt(parseFloat(coneCba.value) / parseFloat(conePI.value));
-		coneCsa.value = parseFloat(PI) * parseFloat(coneRadius.value) * parseFloat(coneSlantHeight.value);
-		coneCircumference.value = parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value);
-		coneTsa.value = parseFloat(parseFloat(coneCba.value) + parseFloat(coneCsa.value));
-		coneSlantHeight.value = parseFloat(coneCsa.value) / parseFloat(parseFloat(2) * parseFloat(PI) * parseFloat(coneRadius.value));
-		coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
-		coneVolume.value = parseFloat((1/3) * parseFloat(coneCba.value) * parseFloat(coneHeight.value));
+	if(conePI.value.length > 0) {
+		if(coneRadius.value.length > 0) {
+			coneCba.value = parseFloat(PI * coneRadius.value ** 2);
+			coneCircumference.value = parseFloat(2 * PI * coneRadius.value);
+			if(coneSlantHeight.value.length > 0) {
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+			}else if(coneHeight.value.length > 0) {
+				coneSlantHeight.value = Math.sqrt(parseFloat(coneRadius.value **2) + parseFloat(coneHeight.value **2));
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+			}else if(coneCsa.value.length > 0) {
+				coneSlantHeight.value = parseFloat(coneCsa.value / (parseFloat(PI * coneRadius.value)));
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+			}else if(coneTsa.value.length > 0) {
+				coneSlantHeight.value = parseFloat(coneTsa.value / (parseFloat(PI * coneRadius.value))) - parseFloat(coneRadius.value);
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+			}else if(coneVolume.value.length > 0) {
+				coneHeight.value = parseFloat(coneVolume.value * 3) / parseFloat(coneCba.value);
+				coneSlantHeight.value = Math.sqrt(parseFloat(coneHeight.value **2) + parseFloat(coneRadius.value **2));
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+			}
+		}else if(coneSlantHeight.value.length > 0) {
+			if(coneHeight.value.length > 0) {
+				coneRadius.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneHeight.value **2));
+				coneCba.value = parseFloat(PI * coneRadius.value ** 2);
+				coneCircumference.value = parseFloat(2 * PI * coneRadius.value);
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+			}else if(coneCircumference.value.length > 0) {
+				coneCsa.value = parseFloat(coneCircumference.value * coneSlantHeight.value) / 2;
+			}else if(coneCba.value.length > 0) {
+				coneRadius.value = Math.sqrt(parseFloat(coneCba.value / PI));
+				coneCircumference.value = parseFloat(2 * PI * coneRadius.value);
+				coneCsa.value = parseFloat(PI * coneRadius.value * coneSlantHeight.value);
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+			}else if(coneCsa.value.length > 0) {
+				coneRadius.value = parseFloat(coneCsa.value) / parseFloat(PI * coneSlantHeight.value);
+				coneCba.value = parseFloat(PI * coneRadius.value ** 2);
+				coneCircumference.value = parseFloat(2 * PI * coneRadius.value);
+				coneHeight.value = Math.sqrt(parseFloat(coneSlantHeight.value **2) - parseFloat(coneRadius.value **2));
+				coneTsa.value = parseFloat(coneCba.value) + parseFloat(coneCsa.value);
+				coneVolume.value = parseFloat(parseFloat(coneCba.value * coneHeight.value) / 3);
+			}else {
+				alert("insufficient information");
+			}
+		}else if(coneCircumference.value.length > 0) {
+			coneRadius.value = parseFloat(coneCircumference.value / (2 * PI));
+			coneCba.value = parseFloat(PI * coneRadius.value ** 2);
+		}else if(coneCba.value.length > 0) {
+			coneRadius.value = Math.sqrt(parseFloat(coneCba.value / PI));
+			coneCircumference.value = parseFloat(2 * PI * coneRadius.value);
+		}
 	}
 }
 
