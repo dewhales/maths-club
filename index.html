@@ -140,6 +140,16 @@
 								Parallelogram
 							</a>
 						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#permutation-calc-container">
+								Permutation
+							</a>
+						</div>
+						<div class = "p-2 my-flex-item">
+							<a class="btn btn-outline-warning" href="#permutation-calc-container">
+								Combination
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -409,87 +419,6 @@
 							<button id="reset-cir" class="input submit">reset</button>
 						</div>
 					</div>
-					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="cylinder-calc-container">
-						<h3>
-							Cylinder
-						</h3>
-						<div class="input-container">
-							<label for="cyl-PI">
-								PI:
-							</label>
-							<br>
-							<input id="cyl-pi" class="input" type="number" name="cyl-PI" value="3.142857142857143" readonly>
-						</div>
-						<div class="input-container">
-							<label for="cyl-radius">
-								Radius-( r ):
-							</label><br>
-							<input id="cyl-radius" class="input" type="number" name="cyl-radius" placeholder="radius">
-						</div>
-						<div class="input-container">
-							<label for="cyl-height">
-								Height-( h ):
-							</label>
-							<br>
-							<input id="cyl-height" class="input" type="number" name="cyl-height" placeholder="height">
-						</div>
-						<div class="input-container">
-							<label for="cyl-circumference">
-								Circular Base/Top Circumference-( C ) =
-								<small>
-									( 2 x PI x r )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-circumference" class="input" type="number" name="cyl-csa" placeholder="circumference">
-						</div>
-						<div class="input-container">
-							<label for="cyl-cba">
-								Circular Base/Top Area-( CBA ) =
-								<small>
-									( PI x r<sup>2</sup> )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-cba" class="input" type="number" name="cyl-cba" placeholder="circular base area">
-						</div>
-						<div class="input-container">
-							<label for="cyl-csa">
-								Curved Surface Area-( CSA ) =
-								<small>
-									( 2 x PI x r x h )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-csa" class="input" type="number" name="cyl-csa" placeholder="curved surface area">
-						</div>
-						<div class="input-container">
-							<label for="cyl-tsa">
-								Total Surface Area-( TSA ) =
-								<small>
-									( 2 x PI x r( r + h ))
-								</small>
-							</label>
-							<br>
-							<input id="cyl-tsa" class="input" type="number" name="cyl-tsa" placeholder="total surface area">
-						</div>
-						<div class="input-container">
-							<label for="cyl-vol">
-								Volume-( V ) =
-								<small>
-									( PI x r<sup>2</sup> x h )
-								</small>
-							</label>
-							<br>
-							<input id="cyl-vol" class="input" type="number" name="cyl-vol" placeholder="volume">
-						</div>
-						<div class="submit-wrap d-flex justify-content-between">
-							<button id="submit-cyl" class="input submit">answer</button>
-							<button id="reset-cyl" class="input submit">reset</button>
-						</div>
-					</div>
-				</div>
-				<div class="row">
 					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="trapezium-calc-container">
 						<h3>
 							Trapezium
@@ -529,6 +458,8 @@
 							<button id="reset-trap" class="input submit">reset</button>
 						</div>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="parallelogram-calc-container">
 						<h3>
 							Parallelogram
@@ -559,6 +490,49 @@
 						<div class="submit-wrap d-flex justify-content-between">
 							<button id="submit-par" class="input submit">answer</button>
 							<button id="reset-par" class="input submit">reset</button>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="permutation-calc-container">
+						<h3>
+							Permutation & Combination
+						</h3>
+						<div class="input-container">
+							<label for="permutation">
+								Operator:
+							</label>
+							<br>
+							<select id="permutation" class="input">
+								<option id="permutation-option">select operator</option>
+								<option value="permutation">permutation</option>
+								<option value="combination">Combination</option>
+							</select>
+						</div>
+						<div class="input-container">
+							<label for="perm-num1">
+								Numerator-( X! ):
+							</label>
+							<br>
+							<input id="perm-num1" class="input" type="number" name="perm-num1" placeholder="X!">
+						</div>
+						<div class="input-container">
+							<label for="perm-num2">
+								Denominator-( Y! )
+							</label>
+							<br>
+							<input id="perm-num2" class="input" type="number" name="perm-num2" placeholder="Y!">
+						</div>
+						<div class="input-container">
+							<label for="perm-result">
+								Result:
+								<sup>x</sup>P<sub>y</sub>---
+								<sup>x</sup>C<sub>y</sub>
+							</label>
+							<br>
+							<input id="perm-result" class="input" type="number" name="perm-result" placeholder="result">
+						</div>
+						<div class="submit-wrap d-flex justify-content-between">
+							<button id="submit-perm" class="input submit">answer</button>
+							<button id="reset-perm" class="input submit">reset</button>
 						</div>
 					</div>
 				</div>
@@ -761,6 +735,85 @@
 								<button id="reset-cone" class="input submit">reset</button>
 							</div>
 						</div>
+						<div class="col-lg-5 col-md-5 col-sm-10 calc-container" id="cylinder-calc-container">
+							<h3>
+								Cylinder
+							</h3>
+							<div class="input-container">
+								<label for="cyl-PI">
+									PI:
+								</label>
+								<br>
+								<input id="cyl-pi" class="input" type="number" name="cyl-PI" value="3.142857142857143" readonly>
+							</div>
+							<div class="input-container">
+								<label for="cyl-radius">
+									Radius-( r ):
+								</label><br>
+								<input id="cyl-radius" class="input" type="number" name="cyl-radius" placeholder="radius">
+							</div>
+							<div class="input-container">
+								<label for="cyl-height">
+									Height-( h ):
+								</label>
+								<br>
+								<input id="cyl-height" class="input" type="number" name="cyl-height" placeholder="height">
+							</div>
+							<div class="input-container">
+								<label for="cyl-circumference">
+									Circular Base/Top Circumference-( C ) =
+									<small>
+										( 2 x PI x r )
+									</small>
+								</label>
+								<br>
+								<input id="cyl-circumference" class="input" type="number" name="cyl-csa" placeholder="circumference">
+							</div>
+							<div class="input-container">
+								<label for="cyl-cba">
+									Circular Base/Top Area-( CBA ) =
+									<small>
+										( PI x r<sup>2</sup> )
+									</small>
+								</label>
+								<br>
+								<input id="cyl-cba" class="input" type="number" name="cyl-cba" placeholder="circular base area">
+							</div>
+							<div class="input-container">
+								<label for="cyl-csa">
+									Curved Surface Area-( CSA ) =
+									<small>
+										( 2 x PI x r x h )
+									</small>
+								</label>
+								<br>
+								<input id="cyl-csa" class="input" type="number" name="cyl-csa" placeholder="curved surface area">
+							</div>
+							<div class="input-container">
+								<label for="cyl-tsa">
+									Total Surface Area-( TSA ) =
+									<small>
+										( 2 x PI x r( r + h ))
+									</small>
+								</label>
+								<br>
+								<input id="cyl-tsa" class="input" type="number" name="cyl-tsa" placeholder="total surface area">
+							</div>
+							<div class="input-container">
+								<label for="cyl-vol">
+									Volume-( V ) =
+									<small>
+										( PI x r<sup>2</sup> x h )
+									</small>
+								</label>
+								<br>
+								<input id="cyl-vol" class="input" type="number" name="cyl-vol" placeholder="volume">
+							</div>
+							<div class="submit-wrap d-flex justify-content-between">
+								<button id="submit-cyl" class="input submit">answer</button>
+								<button id="reset-cyl" class="input submit">reset</button>
+							</div>
+						</div>
 					</div>
 			</div>
 			<div id="about-container">
@@ -802,8 +855,6 @@
 						</p>
 					</article>
 				</div>
-			</div>
-			<div id="contact-container">
 			</div>
 			<div id="footer-container">
 				<footer id="footer">

@@ -756,3 +756,131 @@ submitCone.addEventListener("click", submitConeCalculator);
 resetCone.addEventListener("click", resetConeCalculator);
 
 /*CONE CALCULATOR ENDS HERE_-_!!!*/
+
+
+
+/*Permutation and Combination Calculator Starts here*/
+
+/*Permutation Function below*/
+function permutationFunction(x, y) {
+	num1 = [];
+	for(let i=1; i<=x; i++) {
+		num1.unshift(i);
+	}
+	num2 = [];
+	for(let i=1; i<=y; i++) {
+		num2.unshift(i);
+	}
+	let numerator = num1.reduce((a,b) => a*b,1)
+	let denominator = num2.reduce((a,b) => a*b,1)
+	let permutation = numerator / denominator;
+	return parseFloat(permutation);
+}
+
+
+function combinationFunction(x, y) {
+	num1 = [];
+	for(let i=1; i<=x; i++) {
+		num1.unshift(i);
+	}
+	let numerator = num1.reduce((a,b) => a*b,1);
+	num2 = [];
+	for(let i=1; i<=y; i++) {
+		num2.unshift(i);
+	}
+	let denominator = num2.reduce((a,b) => a*b,1);
+	let z = [];
+	let difference = x-y;
+	for(let i=1; i<=difference; i++) {
+		z.unshift(i);
+	}
+	let denominatorDifference = z.reduce((a,b) => a*b,1);
+	let combination = numerator / (denominatorDifference * denominator);
+	return parseFloat(combination);
+}
+
+
+/*submit permutation calculator starts here...*/
+let submitPermutation = document.querySelector("#submit-perm");
+function submitPermutationCalculator() {
+	let permNum1 = document.querySelector("#perm-num1");
+	let permNum2 = document.querySelector("#perm-num2");
+	let permResult = document.querySelector("#perm-result");
+	let operator = document.querySelector("#permutation");
+	if(operator.value == "permutation") {
+		if(permNum1.value.length > 0 && permNum2.value.length > 0) {
+			permResult.value = permutationFunction(permNum1.value, permNum2.value);
+		}
+	}else if(operator.value == "combination") {
+		if(permNum1.value.length > 0 && permNum2.value.length > 0){
+			permResult.value = combinationFunction(permNum1.value, permNum2.value);
+		}
+	}else {
+		alert("SYNTAX ERROR");
+	}
+}
+
+
+/*reset permutation calculator starts here...*/
+let resetPermutation = document.querySelector("#reset-perm");
+function resetPermutationCalculator() {
+	let permNum1 = document.querySelector("#perm-num1");
+	let permNum2 = document.querySelector("#perm-num2");
+	let permResult = document.querySelector("#perm-result");
+	let operator = document.querySelector("#permutation");
+	permNum1.value = "";
+	permNum2.value = "";
+	permResult.value = "";
+	operator.value = document.querySelector("#permutation-option").value;
+}
+
+
+
+submitPermutation.addEventListener("click", submitPermutationCalculator);
+resetPermutation.addEventListener("click", resetPermutationCalculator);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
