@@ -730,7 +730,7 @@ function submitConeCalculator() {
 	}
 }
 
-// Function to reset Trapezium Calculator
+// Function to reset Cone Calculator
 let resetCone = document.querySelector("#reset-cone");
 function resetConeCalculator () {
 	let coneRadius = document.querySelector("#cone-radius");
@@ -751,7 +751,7 @@ function resetConeCalculator () {
 	coneCircumference.value = "";
 }
 
-// Event Listeners for Trapezium Calculations
+// Event Listeners for Cone Calculations
 submitCone.addEventListener("click", submitConeCalculator);
 resetCone.addEventListener("click", resetConeCalculator);
 
@@ -877,10 +877,101 @@ resetPermutation.addEventListener("click", resetPermutationCalculator);
 
 
 
+// Parabola Calculator Starts---!
 
+// Calculate Areas of Parabola
+let submitParabola = document.querySelector("#submit-parabola");
+function submitParabolaCalculator() {
+	let parabolaX2 = document.querySelector("#parabola-x2");
+	let parabolaX = document.querySelector("#parabola-x");
+	let parabolaQuadNum = document.querySelector("#paraquad-num");
+	let parabolaA = document.querySelector("#parabola-a");
+	let parabolaH = document.querySelector("#parabola-h");
+	let parabolaK = document.querySelector("#parabola-k");
+	let parabolaVertex = document.querySelector("#parabola-vertex");
+	let parabolaAxis = document.querySelector("#parabola-axis");
+	let parabolaFormular = document.querySelector("#parabola-formular");
+	let interceptsX = document.querySelector("#x-intercepts");
+	let interceptsY = document.querySelector("#y-intercepts");
+	if(parabolaX2.value.length > 0) {
+		parabolaA.value = parseFloat(parabolaX2.value);
+		if(parabolaX.value.length > 0) {
+			parabolaH.value = parseFloat(parabolaX.value / (2 * parabolaX2.value));
+			if(parabolaQuadNum.value.length > 0) {
+				parabolaK.value = parseFloat(parabolaQuadNum.value) + (parabolaA.value * parabolaX.value);
+				parabolaVertex.value = `(${parabolaH.value} , ${parabolaK.value})`;
+				parabolaAxis.value = `graph of x=${parabolaH.value} or y=${parabolaK.value}`;
+				let x1= Math.sqrt(
+					 		(parseFloat(parabolaK.value))
+					 		 /
+					 		 	(parseFloat(parabolaA.value))
+					 	)
+					 	 +
+					 	 	parseFloat(parabolaH.value);
+				let x2= Math.sqrt(
+					 		(parseFloat(parabolaK.value))
+					 		 /
+					 		 	(parseFloat(parabolaA.value))
+					 	)
+					 	 -
+					 	 	parseFloat(parabolaH.value);
+				interceptsX.value = `(${(x1).toFixed(2)} , 0) or (${(x2).toFixed(2)}, 0)`;
+				let y= parseFloat(parseFloat(parabolaA.value * (parseFloat(0) + parseFloat(parabolaH.value))**2) + parseFloat(parabolaK.value));
+				interceptsY.value = `(0 , ${(y).toFixed(2)})`;
+				if(parabolaH.value < 0){
+					if(parabolaA.value == 1 || parabolaA.value == -1){
+						parabolaFormular.value = `y=${parabolaA.value}(x ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}else if(parabolaA.value > 1) {
+						parabolaFormular.value = `y=${parabolaA.value}(x ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}else if(parabolaA.value < -1) {
+						parabolaFormular.value = `y=${parabolaA.value}(x ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}
+				}else if(parabolaH.value >= 0) {
+					if(parabolaA.value == 1 || parabolaA.value == -1){
+						parabolaFormular.value = `y=${parabolaA.value}(x + ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}else if(parabolaA.value > 1) {
+						parabolaFormular.value = `y=${parabolaA.value}(x + ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}else if(parabolaA.value < -1) {
+						parabolaFormular.value = `y=${parabolaA.value}(x + ${parabolaH.value})sq. + (${parabolaK.value})`;
+					}
+				}else {
+						parabolaFormular.value = `y=${parabolaA.value}(${parabolaX2.value}x + ${parabolaH.value}) + ${parabolaK.value}`;
+				}
+			}
+		}
+	}
+}
 
+// Function to reset Parabola Calculator
+let resetParabola = document.querySelector("#reset-parabola");
+function resetParabolaCalculator () {
+	let parabolaX2 = document.querySelector("#parabola-x2");
+	let parabolaX = document.querySelector("#parabola-x");
+	let parabolaQuadNum = document.querySelector("#paraquad-num");
+	let parabolaA = document.querySelector("#parabola-a");
+	let parabolaH = document.querySelector("#parabola-h");
+	let parabolaK = document.querySelector("#parabola-k");
+	let parabolaVertex = document.querySelector("#parabola-vertex");
+	let parabolaAxis = document.querySelector("#parabola-axis");
+	let parabolaFormula = document.querySelector("#parabola-formular");
+	let interceptsX = document.querySelector("#x-intercepts");
+	let interceptsY = document.querySelector("#y-intercepts");
+	parabolaX2.value = "";
+	parabolaX.value = "";
+	parabolaAxis.value = "";
+	parabolaA.value = "";
+	parabolaH.value = "";
+	parabolaK.value = "";
+	parabolaVertex.value = "";
+	parabolaQuadNum.value = "";
+	parabolaFormula.value = "";
+	parabolaGraphDirection = "";
+	interceptsX.value = "";
+	interceptsY.value = "";
+}
 
+// Event Listeners for Parabola Calculations
+submitParabola.addEventListener("click", submitParabolaCalculator);
+resetParabola.addEventListener("click", resetParabolaCalculator);
 
-
-
-
+/*PARABOLA CALCULATOR ENDS HERE_-_!!!*/
